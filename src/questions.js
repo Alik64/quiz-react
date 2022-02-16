@@ -39,23 +39,50 @@ export const questions = [
     },
     {
         id: 4,
-        question: "",
-        answer: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        question: " If you see the following import in a file, what is being used for state management in the component?",
+        code: [{ line: 1, text: "import React, {useState} from 'react';" }],
+        answer: [
+            { id: 1, text: "React Hooks", right: true },
+            { id: 2, text: "stateful components" },
+            { id: 3, text: "math" },
+            { id: 4, text: "class components" }]
     },
     {
         id: 5,
-        question: "",
-        answer: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        question: "Using object literal enhancement, you can put values back into an object. When you log person to the console, what is the output?",
+        code: [
+            { line: 1, text: "const name = 'Rachel';" },
+            { line: 2, text: "const age = 31;" },
+            { line: 3, text: "const person = { name, age };" },
+            { line: 4, text: "console.log(person);" },
+        ],
+        answer: [
+            { id: 1, text: "``", code: true },
+            { id: 2, text: "{name: 'Rachel', age: 31}", right: true, code: true },
+            { id: 3, text: "{person: 'Rachel', person: 31}}", code: true },
+            { id: 4, text: "{person: {name: 'Rachel', age: 31}}", code: true }
+        ],
+
     },
     {
         id: 6,
-        question: "",
-        answer: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        question: "What is the testing library most often associated with React?",
+        answer: [
+            { id: 1, text: "Mocha" },
+            { id: 2, text: "Chai" },
+            { id: 3, text: "Sinon" },
+            { id: 4, text: "Jest", right: true }]
     },
     {
         id: 7,
-        question: "",
-        answer: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        question: "To get the first item from the array (“cooking”) using array destructuring, how do you adjust this line?",
+        code: [{ line: 1, text: "const topics = ['cooking', 'art', 'history'];" }],
+        answer: [
+            { id: 1, text: 'const first = ["cooking", "art", "history"]', code: true },
+            { id: 2, text: 'const [] = ["cooking", "art", "history"]', code: true },
+            { id: 3, text: 'const [, first]["cooking", "art", "history"]', code: true },
+            { id: 4, text: 'const [first] = ["cooking", "art", "history"]', right: true, code: true }
+        ]
     },
     {
         id: 8,

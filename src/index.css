@@ -1,4 +1,5 @@
 :root {
+  --lightShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --red: #f00;
   --green: #008000;
