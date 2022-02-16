@@ -1,10 +1,16 @@
-
+import { Routes, Route, Navigate } from "react-router-dom"
+import Home from "./pages/Home/Home";
 import Quiz from './Quiz';
 function App() {
   return (
-    <div className="App">
-      <Quiz />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="*" element={<Navigate to="/" />}
+        />
+      </Routes>
+    </>
   );
 }
 

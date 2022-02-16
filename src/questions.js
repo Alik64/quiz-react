@@ -313,93 +313,105 @@ export const questions = [
     },
     {
         id: 29,
-        question: "",
+        question: "To create a constant in JavaScript, which keyword do you use?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "let" },
+            { id: 2, text: "var" },
+            { id: 3, text: "constant" },
+            { id: 4, text: "const", right: true }]
     },
     {
         id: 30,
-        question: "",
+        question: "What do you call a React component that catches JavaScript errors anywhere in the child component tree?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "error bosses" },
+            { id: 2, text: "error catchers" },
+            { id: 3, text: "error helpers" },
+            { id: 4, text: "error boundaries", right: true }]
     },
     {
         id: 31,
-        question: "",
+        question: "React components are composed to create a user interface. How are components composed?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "by putting them in the same file" },
+            { id: 2, text: "by nesting components", right: true },
+            { id: 3, text: "with webpack" },
+            { id: 4, text: "with code splitting" }]
     },
     {
         id: 32,
-        question: "",
+        question: " In which lifecycle method do you make requests for data in a class component?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "constructor" },
+            { id: 2, text: "componentDidMount", right: true },
+            { id: 3, text: "componentWillReceiveProps" },
+            { id: 4, text: "componentWillMount" }]
     },
     {
         id: 33,
-        question: "",
+        question: "All React components must act like _ with respect to their props.",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "monads" },
+            { id: 2, text: "pure functions", right: true },
+            { id: 3, text: "recursive functions" },
+            { id: 4, text: "higher-order functions" }]
     },
     {
         id: 34,
-        question: "",
+        question: "Why might you use a ref?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "to directly access the DOM node", right: true },
+            { id: 2, text: "to refer to another JS file" },
+            { id: 3, text: "to call a function" },
+            { id: 4, text: "to bind the function" }]
     },
     {
         id: 35,
-        question: "",
+        question: "What is [e.target.id] called in the following code snippet?",
+        code: [
+            { line: 1, text: "handleChange(e) {" },
+            { line: 2, text: "\v this.setState({ [e.target.id]: e.target.value })" },
+            { line: 3, text: "};" }
+        ],
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "a computed property name" },
+            { id: 2, text: "a set value" },
+            { id: 3, text: "a dynamic key ", right: true },
+            { id: 4, text: "a JSX code string" }]
     },
     {
         id: 36,
-        question: "",
+        question: "What is the name of this component?",
+        code: [
+            { line: 1, text: "class Clock extends React.Component {" },
+            { line: 2, text: "\v render() {" },
+            { line: 3, text: "\v \v return <h1>Look at the time: {time}</h1>;" },
+            { line: 4, text: "\v };" },
+            { line: 5, text: "};" }
+        ],
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "Clock", right: true },
+            { id: 2, text: "It does not have a name prop." },
+            { id: 3, text: "React.Component" },
+            { id: 4, text: "Component" }]
     },
     {
         id: 37,
-        question: "",
+        question: "What is sent to an Array.map() function?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "a callback function that is called once for each element in the array", right: true },
+            { id: 2, text: "the name of another array to iterate over" },
+            { id: 3, text: "the number of times you want to call the function" },
+            { id: 4, text: "a string describing what the function should do" }]
     },
     {
         id: 38,
-        question: "",
+        question: "Why is it a good idea to pass a function to setState instead of an object?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "It provides better encapsulation." },
+            { id: 2, text: "It makes sure that the object is not mutated." },
+            { id: 3, text: " It automatically updates a component." },
+            { id: 4, text: "setState is asynchronous and might result in out of sync values.", right: true }]
     },
     {
         id: 39,

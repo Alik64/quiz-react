@@ -1,26 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { questions } from './questions'
 import './Quiz.css'
 import logo from './assets/images/reactlogo.png'
+import { AppContext } from './context/appContext'
 
 
 export default function Quiz() {
+    const { checkerAnswer, good, err } = useContext(AppContext)
 
-    const [good, setGood] = useState(0)
-    const [bad, setBad] = useState(0)
 
     const chekerHandler = (e, bool) => {
-
+        debugger
         if (bool) {
-            setGood(good + 1)
+            checkerAnswer(bool)
             e.target.style.color = "var(--green)"
             e.target.disabled = "true"
 
         } else {
-            if (bad >= 5) {
-                setGood(good - 1)
+            if (err >= 5) {
+                checkerAnswer(bool)
             }
-            setBad(bad + 1)
+            checkerAnswer(bool)
             e.target.style.color = "var(--red)"
             e.target.disabled = "true"
         }
@@ -39,7 +39,7 @@ export default function Quiz() {
                     <div className="quiz_score">
 
                         <h2 className={good < 0 ? "danger" : undefined}>Score: {good} </h2>
-                        <h3 className={bad >= 5 ? "danger" : undefined}>Errors: {bad}</h3>
+                        <h3 className={err >= 5 ? "danger" : undefined}>Errors: {err}</h3>
 
                     </div>
                 </div>
