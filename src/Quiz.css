@@ -61,7 +61,7 @@
 
 .quiz_question h2 {
   font-size: 17px;
-  padding: 0 0 20px;
+  padding: 0 0 10px;
   width: 100%;
 }
 
@@ -83,13 +83,17 @@
 .quiz_answers {
   display: flex;
   flex-direction: column;
+
   margin: 5px 0;
 }
 .quiz_answerBtn {
+  width: 350px;
+  max-width: 500px;
+  text-align: center;
   border: none;
   cursor: pointer;
   box-shadow: var(--shadow);
-  margin: 5px 0;
+  margin: 5px auto;
   padding: 15px 10px;
   font-size: 15px;
 }

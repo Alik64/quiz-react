@@ -39,6 +39,7 @@ export default function Quiz() {
                     <div className="quiz_score">
 
                         <h2 className={good < 0 ? "danger" : undefined}>Score: {good} </h2>
+                        <h3 className={bad >= 5 ? "danger" : undefined}>Errors: {bad}</h3>
 
                     </div>
                 </div>
@@ -58,7 +59,7 @@ export default function Quiz() {
                                 </div>
                             </div>}
                         <div className='quiz_answers'>
-                            {question.answer.map(answer => (
+                            {question.answers.map(answer => (
                                 <button
                                     className='quiz_answerBtn'
                                     onClick={(e) => chekerHandler(e, answer.right)}
