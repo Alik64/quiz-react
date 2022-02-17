@@ -60,6 +60,7 @@
 }
 
 .quiz_question h2 {
+  line-height: 1.4;
   font-size: 17px;
   padding: 0 0 10px;
   width: 100%;
