@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom"
 import Home from "./pages/Home/Home";
-import Quiz from './Quiz';
+import Quiz from './components/Quiz/Quiz';
 function App() {
   return (
     <>

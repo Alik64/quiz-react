@@ -1,26 +1,27 @@
 import React, { useContext, useState } from 'react'
-import { questions } from './questions'
+import { questions } from '../../questions'
 import './Quiz.css'
-import logo from './assets/images/reactlogo.png'
-import { AppContext } from './context/appContext'
+import logo from '../../assets/images/reactlogo.png'
+import { AppContext } from '../../context/appContext'
+import Modal from '../Modal/Modal'
 
 
 export default function Quiz() {
-    const { checkerAnswer, good, err } = useContext(AppContext)
+    const { chekerAnswer, good, err, modal, score } = useContext(AppContext)
 
 
     const chekerHandler = (e, bool) => {
-        debugger
+
         if (bool) {
-            checkerAnswer(bool)
+            chekerAnswer(bool)
             e.target.style.color = "var(--green)"
             e.target.disabled = "true"
 
         } else {
             if (err >= 5) {
-                checkerAnswer(bool)
+                chekerAnswer(bool)
             }
-            checkerAnswer(bool)
+            chekerAnswer(bool)
             e.target.style.color = "var(--red)"
             e.target.disabled = "true"
         }
@@ -28,7 +29,9 @@ export default function Quiz() {
 
 
     return (
+
         <div className='quiz'>
+            {modal && <Modal />}
             <div className='quiz_header'>
                 <div className="quiz_header_content">
                     <div className="quiz_info">
@@ -38,8 +41,9 @@ export default function Quiz() {
                     </div>
                     <div className="quiz_score">
 
-                        <h2 className={good < 0 ? "danger" : undefined}>Score: {good} </h2>
+                        <h2 className={good < 0 ? "danger" : undefined}>Good: {good} </h2>
                         <h3 className={err >= 5 ? "danger" : undefined}>Errors: {err}</h3>
+                        <h3 className={err >= 5 ? "danger" : undefined}>Score: {score}</h3>
 
                     </div>
                 </div>
@@ -75,6 +79,5 @@ export default function Quiz() {
         </div>
     )
 }
-
 
 

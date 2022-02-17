@@ -292,7 +292,7 @@ export const questions = [
         id: 27,
         question: "A representation of a user interface that is kept in memory and is synced with the 'real' DOM is called ___",
         answers: [
-            { id: 1, text: "virtual DOM" },
+            { id: 1, text: "virtual DOM", right: true },
             { id: 2, text: "DOM" },
             { id: 3, text: "virtual elements" },
             { id: 4, text: "shadow DOM" }]
@@ -415,106 +415,138 @@ export const questions = [
     },
     {
         id: 39,
-        question: "",
+        question: "What package contains the render() function that renders a React element tree to the DOM?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "React" },
+            { id: 2, text: "ReactDOM", right: true },
+            { id: 3, text: "Render" },
+            { id: 4, text: "DOM" }]
     },
     {
         id: 40,
-        question: "",
+        question: "How do you set a default value for an uncontrolled form field?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: " Use the value property." },
+            { id: 2, text: "Use the defaultValue property.", right: true },
+            { id: 3, text: "Use the default property." },
+            { id: 4, text: "It assigns one automatically." }]
     },
     {
         id: 41,
-        question: "",
+        question: "What do you need to change about this code to get it to run?",
+        code: [
+            { line: 1, text: "class clock extends React.Component {" },
+            { line: 2, text: "\v render() {" },
+            { line: 3, text: "\v \v return <h1>Look at the time: {time}</h1>;" },
+            { line: 4, text: "\v };" },
+            { line: 5, text: "};" }
+        ],
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "Add quotes around the return value" },
+            { id: 2, text: "Remove this" },
+            { id: 3, text: "Remove the render method" },
+            { id: 4, text: "Capitalize clock", right: true }]
     },
     {
         id: 42,
-        question: "",
+        question: "Which Hook could be used to update the document's title?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "useEffect(function updateTitle() { document.title = name + ' ' + lastname; });", right: true, code: true },
+            { id: 2, text: "useEffect(() => { title = name + ' ' + lastname; });", code: true },
+            { id: 3, text: "useEffect(function updateTitle() { name + ' ' + lastname; });", code: true },
+            { id: 4, text: "useEffect(function updateTitle() { title = name + ' ' + lastname; });", code: true }]
     },
     {
         id: 43,
-        question: "",
+        question: "What can you use to wrap Component imports in order to load them lazily?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "React.fallback" },
+            { id: 2, text: "React.split" },
+            { id: 3, text: "React.lazy", right: true },
+            { id: 4, text: "React.memo" }]
     },
     {
         id: 44,
-        question: "",
+        question: "Which of the following click event handlers will allow you to pass the name of the person to be hugged? ",
+        code: [
+            { line: 1, text: "class Huggable extends React.Component {" },
+            { line: 2, text: "\v hug(id) {" },
+            { line: 3, text: "\v \v console.log('hugging' + id);" },
+            { line: 4, text: "\v }" },
+            { line: 5, text: "\v render() {" },
+            { line: 6, text: "\v \v let name = 'kitteh';" },
+            { line: 7, text: "\v \v let button = // Missing Code" },
+            { line: 8, text: "\v \v return button;" },
+            { line: 9, text: "\v }" },
+            { line: 10, text: "};" }
+        ],
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "<button onClick={(name) => this.hug(name)}>Hug Button</button>", code: true },
+            { id: 2, text: "<button onClick={this.hug(e, name)}>Hug Button</button>", code: true },
+            { id: 3, text: "<button onClick={(e) => hug(e, name)}>Hug Button</button>", code: true },
+            { id: 4, text: "<button onClick={(e) => this.hug(name,e)}>Hug Button</button>", code: true, right: true }]
     },
     {
         id: 45,
-        question: "",
+        question: "How do you invoke setDone only when component mounts, using hooks?",
+        code: [
+            { line: 1, text: "function MyComponent(props) {" },
+            { line: 2, text: "\v const [done, setDone] = useState(false);" },
+            { line: 3, text: "\v return <h1>Done: {done}</h1>;" },
+            { line: 4, text: "}" }],
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "useEffect(() => { setDone(true); });", code: true },
+            { id: 2, text: "useEffect(() => { setDone(true); }, []);", code: true, right: true },
+            { id: 3, text: "useEffect(() => { setDone(true); }, [setDone]);", code: true },
+            { id: 4, text: "useEffect(() => { setDone(true); }, [done, setDone])", code: true }]
     },
     {
         id: 46,
-        question: "",
+        question: "Currently, handleClick is being called instead of passed as a reference. How do you fix this?",
+        code: [
+            { line: 1, text: "<button onClick={this.handleClick()}>Click this</button>" }
+        ],
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "<button onClick={handleClick.bind()}>Click this</button>", code: true },
+            { id: 2, text: "<button onClick={handleClick()}>Click this</button>", code: true },
+            { id: 3, text: "<button onClick={this.handleClick}>Click this</button>", code: true, right: true },
+            { id: 4, text: "<button onclick={this.handleClick}>Click this</button>", code: true }]
     },
     {
         id: 47,
-        question: "",
+        question: "Which answer best describes a function component?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: "A function component is the same as a class component." },
+            { id: 2, text: "A function component accepts a single props object and returns a React element.", right: true },
+            { id: 3, text: "A function component is the only way to create a component." },
+            { id: 4, text: "A function component is required to create a React component." }]
     },
     {
         id: 48,
-        question: "",
+        question: "Which library does the fetch() function come from?",
         answers: [
-            { id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            { id: 1, text: " FetchJS" },
+            { id: 2, text: "ReactDOM" },
+            { id: 3, text: "No library. fetch() is supported by most browsers.", right: true },
+            { id: 4, text: "React" }]
     },
     {
         id: 49,
-        question: "",
+        question: "What will happen when this useEffect Hook is executed, assuming name is not already equal to John?",
+        code: [
+            { line: 1, text: "useEffect(() => {" },
+            { line: 2, text: "\v setName('John');" },
+            { line: 3, text: "}, [name]);" }],
+
         answers:
-            [{ id: 1, text: "" },
-            { id: 2, text: "" },
-            { id: 3, text: "" },
-            { id: 4, text: "" }]
+            [{ id: 1, text: "It will cause an error immediately." },
+            { id: 2, text: "It will execute the code inside the function, but only after waiting to ensure that no other component is accessing the name variable." },
+            { id: 3, text: "It will update the value of name once and not run again until name is changed from the outside.", right: true },
+            { id: 4, text: "It will cause an infinite loop." }]
     },
     {
         id: 50,
-        question: "",
+        question: "Which choice will not cause a React component to rerender?",
         answers: [
             { id: 1, text: "" },
             { id: 2, text: "" },
@@ -523,118 +555,210 @@ export const questions = [
     },
     {
         id: 51,
-        question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        question: "You have created a new method in a class component called handleClick, but it is not working. Which code is missing?",
+        answers: [
+            { id: 1, text: "this.handleClick.bind(this);", code: true, },
+            { id: 2, text: "props.bind(handleClick); ", code: true, },
+            { id: 3, text: "this.handleClick.bind();", code: true, },
+            { id: 4, text: "this.handleClick = this.handleClick.bind(this);", code: true, right: true }]
     },
     {
         id: 52,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 53,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 54,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 55,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 56,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 57,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 58,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 59,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 60,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 61,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 62,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 63,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 64,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 65,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 66,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 67,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 68,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 69,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 70,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 71,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 72,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 73,
         question: "",
-        answers: [{ id: 1, text: "" }, { id: 2, text: "" }, { id: 3, text: "" }, { id: 4, text: "" }]
+        answers: [
+            { id: 1, text: "" },
+            { id: 2, text: "" },
+            { id: 3, text: "" },
+            { id: 4, text: "" }]
     },
     {
         id: 74,
