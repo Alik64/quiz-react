@@ -11,6 +11,7 @@
 }
 .modal_wrapper {
   max-width: 350px;
+  min-width: 350px;
   border-radius: 10px;
   background-color: #fff;
   padding: 30px 20px;
@@ -28,4 +29,11 @@
 }
 .modal_btn {
   margin: 17px auto 0;
+}
+.modal_link {
+  margin-top: 20px;
+  text-decoration: none;
+}
+.modal_link a {
+  cursor: pointer;
 }

@@ -1,11 +1,12 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const AppContext = createContext()
 
 export function AppContextProvider(props) {
     const [score, setScore] = useState(0)
     const [err, setErr] = useState(0)
-    const [modal, setModal] = useState(true)
+    const [modalrules, setModalRules] = useState(true)
+    const [modalresults, setModalResults] = useState(false)
     const [good, setGood] = useState(0)
 
     const chekerAnswer = bool => {
@@ -20,11 +21,15 @@ export function AppContextProvider(props) {
             setErr(err + 1)
         }
     }
-    const modalCloser = () => {
-        setModal(false)
+    const modalRulesToogle = (bool) => {
+        setModalRules(bool)
     }
+    const modalResultsToggle = (bool) => {
+        setModalResults(bool)
+    }
+
     return (
-        <AppContext.Provider value={{ modalCloser, chekerAnswer, good, err, modal, score }}>
+        <AppContext.Provider value={{ modalResultsToggle, modalresults, modalRulesToogle, modalrules, chekerAnswer, good, err, score }}>
             {props.children}
         </AppContext.Provider>
     )

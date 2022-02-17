@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react'
-import { questions } from '../../questions'
 import './Quiz.css'
-import logo from '../../assets/images/reactlogo.png'
+
 import { AppContext } from '../../context/appContext'
-import Modal from '../Modal/Modal'
+import ModalRules from '../Modals/ModalRules'
+import ModalResult from '../Modals/ModalResult'
 
 
-export default function Quiz() {
-    const { chekerAnswer, good, err, modal, score } = useContext(AppContext)
+export default function Quiz({ questions, title, logo }) {
+
+    const { modalResultsToggle, modalresults, modalRulesToogle, modalrules, chekerAnswer, good, err, score } = useContext(AppContext)
 
 
     const chekerHandler = (e, bool) => {
@@ -31,21 +32,22 @@ export default function Quiz() {
     return (
 
         <div className='quiz'>
-            {modal && <Modal />}
+
+            {modalrules && <ModalRules />}
+            {modalresults && <ModalResult />}
             <div className='quiz_header'>
                 <div className="quiz_header_content">
                     <div className="quiz_info">
                         <img className='quiz_logo'
-                            src={logo} alt="React logo" />
-                        <h1>React Quiz</h1>
+                            src={logo} alt="logo" />
+                        <h1>{title}</h1>
                     </div>
                     <div className="quiz_score">
-
-                        <h2 className={good < 0 ? "danger" : undefined}>Good: {good} </h2>
-                        <h3 className={err >= 5 ? "danger" : undefined}>Errors: {err}</h3>
                         <h3 className={err >= 5 ? "danger" : undefined}>Score: {score}</h3>
 
+                        <h3 className={err >= 5 ? "danger" : undefined}>Errors: {err}</h3>
                     </div>
+
                 </div>
 
 
@@ -75,6 +77,9 @@ export default function Quiz() {
 
                     </div>
                 ))}
+            </div>
+            <div className='quiz_footer'>
+                <button onClick={() => modalResultsToggle(true)} className='home_btn quiz_validateBtn'> Validate</button>
             </div>
         </div>
     )
