@@ -4,7 +4,7 @@ import './Modal.css'
 
 export default function ModalRules() {
 
-    const { modalResultsToggle, modalresults, modalRulesToogle, modalrules, chekerAnswer, good, err, score } = useContext(AppContext)
+    const { modalRulesToogle } = useContext(AppContext)
 
     return (
         <div className='modal'>

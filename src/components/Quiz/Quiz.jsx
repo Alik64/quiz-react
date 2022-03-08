@@ -1,14 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import './Quiz.css'
 
 import { AppContext } from '../../context/appContext'
+
 import ModalRules from '../Modals/ModalRules'
 import ModalResult from '../Modals/ModalResult'
 
 
 export default function Quiz({ questions, title, logo }) {
 
-    const { modalResultsToggle, modalresults, modalRulesToogle, modalrules, chekerAnswer, good, err, score } = useContext(AppContext)
+    const { modalResultsToggle, modalresults, modalrules, chekerAnswer, err, score } = useContext(AppContext)
 
 
     const chekerHandler = (e, bool) => {
@@ -35,6 +36,7 @@ export default function Quiz({ questions, title, logo }) {
 
             {modalrules && <ModalRules />}
             {modalresults && <ModalResult />}
+
             <div className='quiz_header'>
                 <div className="quiz_header_content">
                     <div className="quiz_info">
