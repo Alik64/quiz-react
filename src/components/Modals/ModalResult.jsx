@@ -35,7 +35,6 @@ export default function ModalResult() {
 }
 
 function showYourSkill(score) {
-
     switch (true) {
         case (score < 10):
             return <h2>Noob</h2>
@@ -52,7 +51,4 @@ function showYourSkill(score) {
         case (score === 85):
             return <h2>Kill it , man! :)</h2>
     }
-
-
-
 }
