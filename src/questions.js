@@ -812,6 +812,7 @@ export const questions = [
     {
         id: 71,
         question: "What is this pattern called?",
+        code: [{ line: 1, text: "const [count, setCount] = useState(0);" }],
         answers: [
             { id: 1, text: "object destructuring" },
             { id: 2, text: "array destructuring", right: true },
