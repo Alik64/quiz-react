@@ -174,7 +174,7 @@ export const questions = [
             { line: 2, text: "\v return (" },
             { line: 3, text: "\v \v  <Suspense>" },
             { line: 4, text: "\v \v \v <div>" },
-            { line: 5, text: "\v \v \v \v <Message\>" },
+            { line: 5, text: "\v \v \v \v <Message\>" },//eslint-disable-line
             { line: 6, text: "\v \v \v </div>" },
             { line: 7, text: "\v \v  </Suspense>" },
             { line: 8, text: "\v );" },
@@ -575,7 +575,7 @@ export const questions = [
         question: "What is the shorthand for <React.Fragment>?",
         answers: [
             { id: 1, text: "<...> your code </...>", code: true },
-            { id: 2, text: "<//> your code <\//>", code: true },
+            { id: 2, text: "<**> your code <**>", code: true },
             { id: 3, text: "<Frag> your code </Frag>", code: true },
             { id: 4, text: "<> your code </>", code: true, right: true }]
     },
