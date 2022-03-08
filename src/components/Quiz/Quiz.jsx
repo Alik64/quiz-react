@@ -30,6 +30,7 @@ export default function Quiz({ questions, title, logo }) {
     }
 
 
+
     return (
 
         <div className='quiz'>
@@ -46,7 +47,6 @@ export default function Quiz({ questions, title, logo }) {
                     </div>
                     <div className="quiz_score">
                         <h3 className={err >= 5 ? "danger" : undefined}>Score: {score}</h3>
-
                         <h3 className={err >= 5 ? "danger" : undefined}>Errors: {err}</h3>
                     </div>
 
