@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
-import { Link, NavLink } from 'react-router-dom'
 import { AppContext } from '../../context/appContext'
 import './Modal.css'
 
 export default function ModalResult() {
-    const { modalResultsToggle, modalresults, modalRulesToogle, modalrules, chekerAnswer, good, err, score } = useContext(AppContext)
+    const { modalResultsToggle, good, err, score } = useContext(AppContext)
     return (
         <div className='modal'>
             <div className="modal_wrapper">
@@ -21,7 +20,7 @@ export default function ModalResult() {
                             <h4>Your rating :</h4>
                             {showYourSkill(score)}
                             <div className='modal_link'>
-                                <a target="_blank" href="https://reactjs.org/">here you can RTFM  :)</a>
+                                <a target="_blank" rel="noreferrer" href="https://reactjs.org/">here you can RTFM  :)</a>
                             </div>
                         </div>
 
@@ -50,5 +49,7 @@ function showYourSkill(score) {
             return <h2>Master</h2>
         case (score === 85):
             return <h2>Kill it , man! :)</h2>
+        default:
+            return
     }
 }
