@@ -1,9 +1,15 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../../context/appContext'
 import './Modal.css'
 
 export default function ModalResult() {
     const { modalResultsToggle, good, err, score } = useContext(AppContext)
+    const navigate = useNavigate()
+    const validateHandler = () => {
+        modalResultsToggle(false)
+        navigate('/')
+    }
     return (
         <div className='modal'>
             <div className="modal_wrapper">
@@ -25,7 +31,7 @@ export default function ModalResult() {
                         </div>
 
 
-                        <button onClick={() => modalResultsToggle(false)} className='modal_btn home_btn'>Close</button>
+                        <button onClick={validateHandler} className='modal_btn home_btn'>Close</button>
                     </div>
                 </div>
             </div>
