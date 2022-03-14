@@ -19,7 +19,15 @@
   "browser": {
     "crypto": false,
     "stream": false
-},
+},"paths": {
+  "crypto": [
+    "node_modules/crypto-browserify"
+  ],
+  "stream": [
+    "node_modules/stream-browserify"
+  ]
+}
+,
 
   "scripts": {
     "start": "react-scripts start",
