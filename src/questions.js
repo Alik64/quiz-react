@@ -1,9 +1,6 @@
-import { v4 as uuidv4 } from 'uuid';
-
-
 export const questions = [
     {
-        id: uuidv4(),
+        id: 1,
         question: "If you want to import just the Component from the React library, what syntax do you use?",
         answers: [
             { id: 1, text: "import React.Component from 'react' ", code: true },
@@ -13,7 +10,7 @@ export const questions = [
         ]
     },
     {
-        id: uuidv4(),
+        id: 2,
         question: "If a function component should always render the same way given the same props, what is a simple performance optimization available for it?",
         answers: [
             { id: 1, text: "Wrap it in the React.memo higher-order component.", right: true },
@@ -23,7 +20,7 @@ export const questions = [
         ]
     },
     {
-        id: uuidv4(),
+        id: 3,
         question: "How do you fix the syntax error that results from running this code?",
         code: [
             { line: 1, text: "const person =(firstName, lastName) =>" },
@@ -41,7 +38,7 @@ export const questions = [
             { id: 4, text: "Replace the object with an array." }]
     },
     {
-        id: uuidv4(),
+        id: 4,
         question: " If you see the following import in a file, what is being used for state management in the component?",
         code: [{ line: 1, text: "import React, {useState} from 'react';" }],
         answers: [
@@ -51,7 +48,7 @@ export const questions = [
             { id: 4, text: "class components" }]
     },
     {
-        id: uuidv4(),
+        id: 5,
         question: "Using object literal enhancement, you can put values back into an object. When you log person to the console, what is the output?",
         code: [
             { line: 1, text: "const name = 'Rachel';" },
@@ -68,7 +65,7 @@ export const questions = [
 
     },
     {
-        id: uuidv4(),
+        id: 6,
         question: "What is the testing library most often associated with React?",
         answers: [
             { id: 1, text: "Mocha" },
@@ -77,7 +74,7 @@ export const questions = [
             { id: 4, text: "Jest", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 7,
         question: "To get the first item from the array (“cooking”) using array destructuring, how do you adjust this line?",
         code: [{ line: 1, text: "const topics = ['cooking', 'art', 'history'];" }],
         answers: [
@@ -88,7 +85,7 @@ export const questions = [
         ]
     },
     {
-        id: uuidv4(),
+        id: 8,
         question: "How do you handle passing through the component tree without having to pass props down manually at every level?",
         answers: [
             { id: 1, text: "React Send" },
@@ -97,7 +94,7 @@ export const questions = [
             { id: 4, text: "React Context", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 9,
         question: "What should the console read when the following code is run?",
         code: [
             { line: 1, text: "const [, , animal] = ['Horse', 'Mouse', 'Cat'];" },
@@ -106,12 +103,12 @@ export const questions = [
         answers: [{ id: 1, text: "Horse" }, { id: 2, text: "Cat", right: true }, { id: 3, text: "Mouse" }, { id: 4, text: "undefined" }]
     },
     {
-        id: uuidv4(),
+        id: 10,
         question: "What is the name of the tool used to take JSX and turn it into createElement calls?",
         answers: [{ id: 1, text: "JSX Editor" }, { id: 2, text: "ReactDOM" }, { id: 3, text: "Browser Buddy" }, { id: 4, text: "Babel", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 11,
         question: "Why might you use useReducer over useState in a React component?",
         answers: [
             { id: 1, text: "When you want to replace Redux" },
@@ -120,7 +117,7 @@ export const questions = [
             { id: 4, text: "When you want to break your production app" }]
     },
     {
-        id: uuidv4(),
+        id: 12,
         question: "Which props from the props object is available to the component with the following syntax?",
         code: [
             { line: 1, text: "<Message {...props} />" }
@@ -131,7 +128,7 @@ export const questions = [
         { id: 4, text: "Any that have changed" }]
     },
     {
-        id: uuidv4(),
+        id: 13,
         question: "Consider the following code from React Router. What do you call :id in the path prop?",
         code: [
             { line: 1, text: "<Route path='/:id' />" }
@@ -143,7 +140,7 @@ export const questions = [
             { id: 4, text: "This is a route link" }]
     },
     {
-        id: uuidv4(),
+        id: 14,
         question: "If you created a component called Dish and rendered it to the DOM, what type of element would be rendered?",
         code: [
             { line: 1, text: "function Dish() {" },
@@ -159,7 +156,7 @@ export const questions = [
             { id: 4, text: "h1", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 15,
         question: "Given the following code, what does this React element look like?",
         code: [
             { line: 1, text: "React.createElement('h1', null, 'What's happening?');" }],
@@ -170,7 +167,7 @@ export const questions = [
             { id: 4, text: "<h1 id='element'>What's happening?</h1>", code: true }]
     },
     {
-        id: uuidv4(),
+        id: 16,
         question: "What property do you need to add to the Suspense component in order to display a spinner or loading state?",
         code: [
             { line: 1, text: "function MyComponent() {" },
@@ -191,7 +188,7 @@ export const questions = [
             { id: 4, text: "spinner" }]
     },
     {
-        id: uuidv4(),
+        id: 17,
         question: "What do you call the message wrapped in curly braces below?",
         code: [
             { line: 1, text: "const message = 'Hi there';" },
@@ -203,7 +200,7 @@ export const questions = [
             { id: 4, text: "a JS wrapper" }]
     },
     {
-        id: uuidv4(),
+        id: 18,
         question: "What can you use to handle code splitting?",
         answers: [
             { id: 1, text: "React.memo" },
@@ -212,7 +209,7 @@ export const questions = [
             { id: 4, text: "React.fallback" }]
     },
     {
-        id: uuidv4(),
+        id: 19,
         question: "When do you use useLayoutEffect",
         answers: [
             { id: 1, text: "to optimize for all devices" },
@@ -221,7 +218,7 @@ export const questions = [
             { id: 4, text: "when you need the browser to paint before the effect runs", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 20,
         question: "When might you use React.PureComponent?",
         answers: [
             { id: 1, text: "when you do not want your component to have props" },
@@ -230,7 +227,7 @@ export const questions = [
             { id: 4, text: "Class" }]
     },
     {
-        id: uuidv4(),
+        id: 21,
         question: "How do you destructure the properties that are sent to the Dish component?",
         code: [
             { line: 1, text: "function Dish(props) {" },
@@ -247,7 +244,7 @@ export const questions = [
             { id: 4, text: "function Dish(...props) { return <h1>{name} {cookingTime}</h1>; }", code: true }]
     },
     {
-        id: uuidv4(),
+        id: 22,
         question: "Why is it important to avoid copying the values of props into a component's state where possible?",
         answers: [
             { id: 1, text: "because you should never mutate state" },
@@ -256,7 +253,7 @@ export const questions = [
             { id: 4, text: "because you want to allow data to flow back up to the parent" }]
     },
     {
-        id: uuidv4(),
+        id: 23,
         question: "What is the children prop?",
         answers: [
             { id: 1, text: "a property that adds child components to state" },
@@ -265,7 +262,7 @@ export const questions = [
             { id: 4, text: "a property that lets you pass data to child elements" }]
     },
     {
-        id: uuidv4(),
+        id: 24,
         question: "Which attribute do you use to replace innerHTML in the browser DOM?",
         answers: [
             { id: 1, text: "injectHTML" },
@@ -274,7 +271,7 @@ export const questions = [
             { id: 4, text: "strangeHTML" }]
     },
     {
-        id: uuidv4(),
+        id: 25,
         question: "Which of these terms commonly describe React applications?",
         answers: [
             { id: 1, text: "declarative", right: true },
@@ -283,7 +280,7 @@ export const questions = [
             { id: 4, text: "imperative" }]
     },
     {
-        id: uuidv4(),
+        id: 26,
         question: "When using webpack, why would you need to use a loader?",
         answers: [
             { id: 1, text: "to put together physical file folders" },
@@ -292,7 +289,7 @@ export const questions = [
             { id: 4, text: "to load the website into everyone's phone " }]
     },
     {
-        id: uuidv4(),
+        id: 27,
         question: "A representation of a user interface that is kept in memory and is synced with the 'real' DOM is called ___",
         answers: [
             { id: 1, text: "virtual DOM", right: true },
@@ -301,7 +298,7 @@ export const questions = [
             { id: 4, text: "shadow DOM" }]
     },
     {
-        id: uuidv4(),
+        id: 28,
         question: "You have written the following code but nothing is rendering. How do you fix this problem?",
         code: [
             { line: 1, text: "const Heading = () => {" },
@@ -315,7 +312,7 @@ export const questions = [
             { id: 4, text: "Surround the h1 in a div." }]
     },
     {
-        id: uuidv4(),
+        id: 29,
         question: "To create a constant in JavaScript, which keyword do you use?",
         answers: [
             { id: 1, text: "let" },
@@ -324,7 +321,7 @@ export const questions = [
             { id: 4, text: "const", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 30,
         question: "What do you call a React component that catches JavaScript errors anywhere in the child component tree?",
         answers: [
             { id: 1, text: "error bosses" },
@@ -333,7 +330,7 @@ export const questions = [
             { id: 4, text: "error boundaries", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 31,
         question: "React components are composed to create a user interface. How are components composed?",
         answers: [
             { id: 1, text: "by putting them in the same file" },
@@ -342,7 +339,7 @@ export const questions = [
             { id: 4, text: "with code splitting" }]
     },
     {
-        id: uuidv4(),
+        id: 32,
         question: " In which lifecycle method do you make requests for data in a class component?",
         answers: [
             { id: 1, text: "constructor" },
@@ -351,7 +348,7 @@ export const questions = [
             { id: 4, text: "componentWillMount" }]
     },
     {
-        id: uuidv4(),
+        id: 33,
         question: "All React components must act like _ with respect to their props.",
         answers: [
             { id: 1, text: "monads" },
@@ -360,7 +357,7 @@ export const questions = [
             { id: 4, text: "higher-order functions" }]
     },
     {
-        id: uuidv4(),
+        id: 34,
         question: "Why might you use a ref?",
         answers: [
             { id: 1, text: "to directly access the DOM node", right: true },
@@ -369,7 +366,7 @@ export const questions = [
             { id: 4, text: "to bind the function" }]
     },
     {
-        id: uuidv4(),
+        id: 35,
         question: "What is [e.target.id] called in the following code snippet?",
         code: [
             { line: 1, text: "handleChange(e) {" },
@@ -383,7 +380,7 @@ export const questions = [
             { id: 4, text: "a JSX code string" }]
     },
     {
-        id: uuidv4(),
+        id: 36,
         question: "What is the name of this component?",
         code: [
             { line: 1, text: "class Clock extends React.Component {" },
@@ -399,7 +396,7 @@ export const questions = [
             { id: 4, text: "Component" }]
     },
     {
-        id: uuidv4(),
+        id: 37,
         question: "What is sent to an Array.map() function?",
         answers: [
             { id: 1, text: "a callback function that is called once for each element in the array", right: true },
@@ -408,7 +405,7 @@ export const questions = [
             { id: 4, text: "a string describing what the function should do" }]
     },
     {
-        id: uuidv4(),
+        id: 38,
         question: "Why is it a good idea to pass a function to setState instead of an object?",
         answers: [
             { id: 1, text: "It provides better encapsulation." },
@@ -417,7 +414,7 @@ export const questions = [
             { id: 4, text: "setState is asynchronous and might result in out of sync values.", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 39,
         question: "What package contains the render() function that renders a React element tree to the DOM?",
         answers: [
             { id: 1, text: "React" },
@@ -426,7 +423,7 @@ export const questions = [
             { id: 4, text: "DOM" }]
     },
     {
-        id: uuidv4(),
+        id: 40,
         question: "How do you set a default value for an uncontrolled form field?",
         answers: [
             { id: 1, text: " Use the value property." },
@@ -435,7 +432,7 @@ export const questions = [
             { id: 4, text: "It assigns one automatically." }]
     },
     {
-        id: uuidv4(),
+        id: 41,
         question: "What do you need to change about this code to get it to run?",
         code: [
             { line: 1, text: "class clock extends React.Component {" },
@@ -451,7 +448,7 @@ export const questions = [
             { id: 4, text: "Capitalize clock", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 42,
         question: "Which Hook could be used to update the document's title?",
         answers: [
             { id: 1, text: "useEffect(function updateTitle() { document.title = name + ' ' + lastname; });", right: true, code: true },
@@ -460,7 +457,7 @@ export const questions = [
             { id: 4, text: "useEffect(function updateTitle() { title = name + ' ' + lastname; });", code: true }]
     },
     {
-        id: uuidv4(),
+        id: 43,
         question: "What can you use to wrap Component imports in order to load them lazily?",
         answers: [
             { id: 1, text: "React.fallback" },
@@ -469,7 +466,7 @@ export const questions = [
             { id: 4, text: "React.memo" }]
     },
     {
-        id: uuidv4(),
+        id: 44,
         question: "Which of the following click event handlers will allow you to pass the name of the person to be hugged? ",
         code: [
             { line: 1, text: "class Huggable extends React.Component {" },
@@ -490,7 +487,7 @@ export const questions = [
             { id: 4, text: "<button onClick={(e) => this.hug(name,e)}>Hug Button</button>", code: true, right: true }]
     },
     {
-        id: uuidv4(),
+        id: 45,
         question: "How do you invoke setDone only when component mounts, using hooks?",
         code: [
             { line: 1, text: "function MyComponent(props) {" },
@@ -504,7 +501,7 @@ export const questions = [
             { id: 4, text: "useEffect(() => { setDone(true); }, [done, setDone])", code: true }]
     },
     {
-        id: uuidv4(),
+        id: 46,
         question: "Currently, handleClick is being called instead of passed as a reference. How do you fix this?",
         code: [
             { line: 1, text: "<button onClick={this.handleClick()}>Click this</button>" }
@@ -516,7 +513,7 @@ export const questions = [
             { id: 4, text: "<button onclick={this.handleClick}>Click this</button>", code: true }]
     },
     {
-        id: uuidv4(),
+        id: 47,
         question: "Which answer best describes a function component?",
         answers: [
             { id: 1, text: "A function component is the same as a class component." },
@@ -525,7 +522,7 @@ export const questions = [
             { id: 4, text: "A function component is required to create a React component." }]
     },
     {
-        id: uuidv4(),
+        id: 48,
         question: "Which library does the fetch() function come from?",
         answers: [
             { id: 1, text: " FetchJS" },
@@ -534,7 +531,7 @@ export const questions = [
             { id: 4, text: "React" }]
     },
     {
-        id: uuidv4(),
+        id: 49,
         question: "What will happen when this useEffect Hook is executed, assuming name is not already equal to John?",
         code: [
             { line: 1, text: "useEffect(() => {" },
@@ -548,7 +545,7 @@ export const questions = [
             { id: 4, text: "It will cause an infinite loop." }]
     },
     {
-        id: uuidv4(),
+        id: 50,
         question: "Which choice will not cause a React component to rerender?",
         answers: [
             { id: 1, text: "if the component calls this.setState(...)" },
@@ -557,7 +554,7 @@ export const questions = [
             { id: 4, text: "one of the component's siblings rerenders", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 51,
         question: "You have created a new method in a class component called handleClick, but it is not working. Which code is missing?",
         code: [
             { line: 1, text: "class Button extends React.Component{" },
@@ -574,7 +571,7 @@ export const questions = [
             { id: 4, text: "this.handleClick = this.handleClick.bind(this);", code: true, right: true }]
     },
     {
-        id: uuidv4(),
+        id: 52,
         question: "What is the shorthand for <React.Fragment>?",
         answers: [
             { id: 1, text: "<...> your code </...>", code: true },
@@ -583,7 +580,7 @@ export const questions = [
             { id: 4, text: "<> your code </>", code: true, right: true }]
     },
     {
-        id: uuidv4(),
+        id: 53,
         question: "If you wanted to display the count state value in the component, what do you need to add to the curly braces in the h1?",
         code: [
             { line: 1, text: "class Ticker extends React.component {" },
@@ -603,7 +600,7 @@ export const questions = [
             { id: 4, text: "state.count" }]
     },
     {
-        id: uuidv4(),
+        id: 54,
         question: "Per the following code, when is the Hello component displayed? ",
         code: [
             { line: 1, text: "const greeting = isLoggedIn ? <Hello /> : null;" }
@@ -615,7 +612,7 @@ export const questions = [
             { id: 4, text: "when the Hello function is called            " }]
     },
     {
-        id: uuidv4(),
+        id: 55,
         question: "In the following code block, what type is orderNumber?        ",
         code: [
             { line: 1, text: "ReactDOM.render(<Message orderNumber='16' />, document.getElementById('root'));" }
@@ -627,7 +624,7 @@ export const questions = [
             { id: 4, text: "component" }]
     },
     {
-        id: uuidv4(),
+        id: 56,
         question: "You have added a style property to the h1 but there is an unexpected token error when it runs. How do you fix this?",
         code: [
             { line: 1, text: "const element = <h1 style={ backgroundColor: 'blue' }>Hi</h1>;" }
@@ -639,7 +636,7 @@ export const questions = [
             { id: 4, text: "const element = <h1 style='blue'>Hi</h1>;", code: true }]
     },
     {
-        id: uuidv4(),
+        id: 57,
         question: "Which function is used to update state variables in a React class component?",
         answers: [
             { id: 1, text: "replaceState" },
@@ -648,7 +645,7 @@ export const questions = [
             { id: 4, text: "setState", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 58,
         question: "Consider the following component. What is the default color for the star?",
         code: [
             { line: 1, text: "const Star = ({ selected = false }) => <Icon color={selected ? 'red' : 'grey'} />;" }
@@ -660,7 +657,7 @@ export const questions = [
             { id: 4, text: "transparent" }]
     },
     {
-        id: uuidv4(),
+        id: 59,
         question: "What is the difference between the click behaviors of these two buttons(assuming that this.handleClick is bound correctly)",
         code: [
             { line: 1, text: "<button onClick=this.handleClick>Click Me</button>" },
@@ -672,7 +669,7 @@ export const questions = [
             { id: 4, text: "Button B will not fire the handler this.handleClick successfully " }]
     },
     {
-        id: uuidv4(),
+        id: 60,
         question: "Give the code below, what does the second argument that is sent to the render function describe?",
         code: [
             { line: 1, text: "ReactDOM.render(                " },
@@ -687,7 +684,7 @@ export const questions = [
             { id: 4, text: "where to create a new JavaScript file" }]
     },
     {
-        id: uuidv4(),
+        id: 61,
         question: "Why should you use React Router's Link component instead of a basic <a> tag in React?",
         answers: [
             { id: 1, text: "The link component allows the user to use the browser's Back button." },
@@ -696,7 +693,7 @@ export const questions = [
             { id: 4, text: "The <a> tag triggers a full page reload, while the Link component does not.", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 62,
         question: "What is the first argument, x, that is sent to the createElement function?",
         code: [
             { line: 1, text: "React.createElement(x, y, z);" }
@@ -708,7 +705,7 @@ export const questions = [
             { id: 4, text: "data that should be displayed in the element" }]
     },
     {
-        id: uuidv4(),
+        id: 63,
         question: "Which class-based lifecycle method would be called at the same time as this effect Hook?        ",
         code: [
             { line: 1, text: "useEffect(() => {                " },
@@ -722,7 +719,7 @@ export const questions = [
             { id: 4, text: "componentDidUpdate" }]
     },
     {
-        id: uuidv4(),
+        id: 64,
         question: "When using a portal, what is the first argument?",
         code: [
             { line: 1, text: "ReactDOM.createPortal(x, y); " }],
@@ -733,7 +730,7 @@ export const questions = [
             { id: 4, text: "the page            " }]
     },
     {
-        id: uuidv4(),
+        id: 65,
         question: "What is setCount?",
         code: [
             { line: 1, text: "const [count, setCount] = useState(0);" }],
@@ -744,7 +741,7 @@ export const questions = [
             { id: 4, text: "a function to update the state", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 66,
         question: "What is the use of map function below?",
         code: [
             { line: 1, text: "const database = [user1:{},user2:{},user3:{}];            " },
@@ -756,7 +753,7 @@ export const questions = [
             { id: 4, text: "checks which entry in the database is suitable for heading tag            " }]
     },
     {
-        id: uuidv4(),
+        id: 67,
         question: "Describe what is happening in this code?",
         code: [
             { line: 1, text: "const { name: firstName } = person;" }
@@ -768,7 +765,7 @@ export const questions = [
             { id: 4, text: " It is assigning the value of the person object's name property to a constant called firstName.", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 68,
         question: "What is wrong with this code?",
         code: [
             { line: 1, text: "const MyComponent = ({ names }) => ( " },
@@ -783,7 +780,7 @@ export const questions = [
             { id: 4, text: "String literals must be surrounded by quotes." }]
     },
     {
-        id: uuidv4(),
+        id: 69,
         question: "When using a portal, what is the second argument?  ",
         code: [
             { line: 1, text: "ReactDOM.createPortal(x, y); " }],
@@ -794,7 +791,7 @@ export const questions = [
             { id: 4, text: "the DOM element that exists outside of the parent component", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 70,
         question: "Given this code, what will be printed in the <h1> tag?",
         code: [
             { line: 1, text: "const MyComponent = ({ children }) => (" },
@@ -813,7 +810,7 @@ export const questions = [
             { id: 4, text: "undefined" }]
     },
     {
-        id: uuidv4(),
+        id: 71,
         question: "What is this pattern called?",
         code: [{ line: 1, text: "const [count, setCount] = useState(0);" }],
         answers: [
@@ -823,7 +820,7 @@ export const questions = [
             { id: 4, text: "code pushing            " }]
     },
     {
-        id: uuidv4(),
+        id: 72,
         question: " What is the first file loaded by the browser in a basic React project?        ",
         answers: [
             { id: 1, text: "src/App.js" },
@@ -832,7 +829,7 @@ export const questions = [
             { id: 4, text: "public/index.html            ", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 73,
         question: "The code below is rendering nothing, and there is an error that says 'ReactDOM is not defined.' How do you fix this issue?",
         code: [
             { line: 1, text: "import React from 'react';" },
@@ -846,7 +843,7 @@ export const questions = [
             { id: 4, text: "DOM(element, document.getElementById('root'));            " }]
     },
     {
-        id: uuidv4(),
+        id: 74,
         question: "In this component, how do you display whether the user was logged in or not?",
         code: [
             { line: 1, text: "render() {" },
@@ -867,7 +864,7 @@ export const questions = [
             }]
     },
     {
-        id: uuidv4(),
+        id: 75,
         question: "You are rendering a list with React when this warning appears in the console: 'Warning: Each child in a list should have a unique 'key' prop.' How do you fix this issue?",
         answers: [
             { id: 1, text: "Pass the name of each item as its key." },
@@ -876,7 +873,7 @@ export const questions = [
             { id: 4, text: "When iterating over the list items, add a unique property to each list item", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 76,
         question: "How would you generate the boilerplate code for a new app that you are building to collect underpants?        ",
         answers: [
             { id: 1, text: "npm create-react-app collect-underpants" },
@@ -885,7 +882,7 @@ export const questions = [
             { id: 4, text: "npx create-react-app collect-underpants", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 77,
         question: "Add the code that will fire the photon torpedoes when the button is clicked.",
         code: [
             { line: 1, text: "class StarTrekkin extends React.Component {" },
@@ -904,7 +901,7 @@ export const questions = [
             { id: 4, text: "<button onClick={this.firePhotonTorpedoes}>Pew Pew</button>", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 78,
         question: "What is the process of deciding whether an update is necessary?        ",
         answers: [
             { id: 1, text: "shadow DOM" },
@@ -913,7 +910,7 @@ export const questions = [
             { id: 4, text: "setting state" }]
     },
     {
-        id: uuidv4(),
+        id: 79,
         question: "React is an open-source project but is maintained by which company?        ",
         answers: [
             { id: 1, text: "Facebook", right: true },
@@ -922,7 +919,7 @@ export const questions = [
             { id: 4, text: "Heineken" }]
     },
     {
-        id: uuidv4(),
+        id: 80,
         question: "What command can you use to generate a React project?",
         answers: [
             { id: 1, text: "react-starter" },
@@ -931,7 +928,7 @@ export const questions = [
             { id: 4, text: "react-start  " }]
     },
     {
-        id: uuidv4(),
+        id: 81,
         question: "What is the browser extension called that React developers use to debug applications?",
         answers: [
             { id: 1, text: "React Codewatch" },
@@ -940,7 +937,7 @@ export const questions = [
             { id: 4, text: "React Developer Tools", right: true }]
     },
     {
-        id: uuidv4(),
+        id: 82,
         question: "Which tool is not part of Create React App?        ",
         answers: [
             { id: 1, text: "React" },
@@ -949,7 +946,7 @@ export const questions = [
             { id: 4, text: "ReactDOM" }]
     },
     {
-        id: uuidv4(),
+        id: 83,
         question: "What is the JavaScript syntax extension that is commonly used to create React elements?        ",
         answers: [
             { id: 1, text: "HTML" },
@@ -958,7 +955,7 @@ export const questions = [
             { id: 4, text: "ReactX" }]
     },
     {
-        id: uuidv4(),
+        id: 84,
         question: "How might you check property types without using Flow or TypeScript?        ",
         answers: [
             { id: 1, text: "Check Manually." },
@@ -967,7 +964,7 @@ export const questions = [
             { id: 4, text: "user checker-types" }]
     },
     {
-        id: uuidv4(),
+        id: 85,
         question: "How do you add an id of heading to the following h1 element?",
         code: [
             { line: 1, text: "let dish = <h1>Mac and Cheese</h1>;" }
