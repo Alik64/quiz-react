@@ -22,7 +22,6 @@ const useRandomQuestions = (num) => {
 
 
 
-
 export default function QuizContainer() {
 
     const newArr = useRandomQuestions(15)
