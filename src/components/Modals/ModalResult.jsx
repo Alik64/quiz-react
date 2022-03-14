@@ -4,10 +4,13 @@ import { AppContext } from '../../context/appContext'
 import './Modal.css'
 
 export default function ModalResult() {
-    const { modalResultsToggle, good, err, score } = useContext(AppContext)
+    const { modalResultsToggle, good, err, setScore, setGood, setErr, score } = useContext(AppContext)
     const navigate = useNavigate()
     const validateHandler = () => {
         modalResultsToggle(false)
+        setScore(0)
+        setGood(0)
+        setErr(0)
         navigate('/')
     }
     return (
@@ -41,19 +44,19 @@ export default function ModalResult() {
 
 function showYourSkill(score) {
     switch (true) {
-        case (score < 10):
+        case (score < 3):
             return <h2>Noob</h2>
-        case (score < 30):
+        case (score < 5):
             return <h2>Beginner</h2>
-        case (score < 40):
+        case (score < 7):
             return <h2>Medium</h2>
-        case (score < 60):
+        case (score < 10):
             return <h2>Advanced</h2>
-        case (score < 80):
+        case (score < 13):
             return <h2>Pro</h2>
-        case (score < 85):
+        case (score < 14):
             return <h2>Master</h2>
-        case (score === 85):
+        case (score === 15):
             return <h2>Kill it , man! :)</h2>
         default:
             return

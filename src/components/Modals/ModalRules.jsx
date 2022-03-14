@@ -18,8 +18,8 @@ export default function ModalRules() {
                         <p>Every positive answer give you 1 point.</p>
                         <p>Only 1 good answer by question.</p>
                         <p>If you make a mistake you can retry until you find a good answer.</p>
-                        <p>You have a right to make 5 errors.</p>
-                        <p>After 5th mistake, each additional error will decrease your score by 1 point.</p>
+                        <p>You have a right to make 3 errors.</p>
+                        <p>After 3rd mistake, each additional error will decrease your score by 1 point.</p>
                         <h2>Good luck!</h2>
                         <button onClick={() => modalRulesToogle(false)} className='modal_btn home_btn'>Let's go!</button>
                     </div>

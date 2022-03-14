@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
 import './Quiz.css'
-
 import { AppContext } from '../../context/appContext'
 
 import ModalRules from '../Modals/ModalRules'
 import ModalResult from '../Modals/ModalResult'
 
 
-export default function Quiz({ questions, title, logo }) {
+export default function Quiz({ newArr, title, logo }) {
 
     const { modalResultsToggle, modalresults, modalrules, chekerAnswer, err, score } = useContext(AppContext)
 
@@ -20,7 +19,7 @@ export default function Quiz({ questions, title, logo }) {
             e.target.disabled = "true"
 
         } else {
-            if (err >= 5) {
+            if (err >= 3) {
                 chekerAnswer(bool)
             }
             chekerAnswer(bool)
@@ -29,8 +28,7 @@ export default function Quiz({ questions, title, logo }) {
         }
     }
 
-
-
+    console.log('render Quiz')
     return (
 
         <div className='quiz'>
@@ -46,8 +44,8 @@ export default function Quiz({ questions, title, logo }) {
                         <h1>{title}</h1>
                     </div>
                     <div className="quiz_score">
-                        <h3 className={err >= 5 ? "danger" : undefined}>Score: {score}</h3>
-                        <h3 className={err >= 5 ? "danger" : undefined}>Errors: {err}</h3>
+                        <h3 className={err >= 3 ? "danger" : undefined}>Score: {score}</h3>
+                        <h3 className={err >= 3 ? "danger" : undefined}>Errors: {err}</h3>
                     </div>
 
                 </div>
@@ -56,10 +54,10 @@ export default function Quiz({ questions, title, logo }) {
             </div>
 
             <div className='quiz_content'>
-                {questions.map(question => (
+                {newArr.map(question => (
                     <div className='quiz_question' key={question.id}>
 
-                        <h2>N°{question.id}: {question.question}</h2>
+                        <h2> {question.question}</h2>
                         {question.code &&
                             <div className='codeContainer'>
                                 <div className='quiz_code'>

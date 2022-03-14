@@ -15,7 +15,7 @@ export function AppContextProvider(props) {
             setScore(score + 1)
             setGood(good + 1)
         } else {
-            if (err >= 5) {
+            if (err >= 3) {
                 setScore(score - 1)
             }
             setErr(err + 1)
@@ -29,7 +29,7 @@ export function AppContextProvider(props) {
     }
 
     return (
-        <AppContext.Provider value={{ modalResultsToggle, modalresults, modalRulesToogle, modalrules, chekerAnswer, good, err, score }}>
+        <AppContext.Provider value={{ setScore, modalResultsToggle, modalresults, modalRulesToogle, modalrules, chekerAnswer, setGood, setErr, good, err, score }}>
             {props.children}
         </AppContext.Provider>
     )
