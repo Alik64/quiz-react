@@ -14,7 +14,7 @@ export default function ModalRules() {
                         <h2>Rules</h2>
                     </div>
                     <div className='modal_text'>
-                        <p>You should answer to all questions.</p>
+                        <p>You should answer to 15 questions.</p>
                         <p>Every positive answer give you 1 point.</p>
                         <p>Only 1 good answer by question.</p>
                         <p>If you make a mistake you can retry until you find a good answer.</p>
