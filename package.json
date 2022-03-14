@@ -16,18 +16,7 @@
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
-  "browser": {
-    "crypto": false,
-    "stream": false
-},"paths": {
-  "crypto": [
-    "node_modules/crypto-browserify"
-  ],
-  "stream": [
-    "node_modules/stream-browserify"
-  ]
-}
-,
+  
 
   "scripts": {
     "start": "react-scripts start",
