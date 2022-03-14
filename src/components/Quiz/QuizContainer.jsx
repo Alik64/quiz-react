@@ -2,7 +2,7 @@ import React from 'react'
 import Quiz from './Quiz.jsx'
 import { questions } from '../../questions'
 import reactlogo from '../../assets/images/reactlogo.png'
-const { rando, randoSequence } = require('@nastyox/rando.js');
+const { randoSequence } = require('@nastyox/rando.js');
 
 const useQuestions = (arr, num, max) => {
 
@@ -11,7 +11,6 @@ const useQuestions = (arr, num, max) => {
     for (let i = 0; i < randomNumbers.length; i++) {
         resultsArr.push(arr[i])
     }
-    console.log(randomNumbers)
     return resultsArr;
 
 }
