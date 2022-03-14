@@ -5,7 +5,24 @@ import reactlogo from '../../assets/images/reactlogo.png'
 
 const { randoSequence } = require('@nastyox/rando.js');
 
-const useRandomQuestions = (num) => {
+const useQuestions = (num) => {
+    // function getRandomNumber() {
+    //     return Math.floor(Math.random() * questions.length);
+    // }
+    // let newArr = []
+    // for (let i = 0; i < 15; i++) {
+    //     newArr.push(questions[getRandomNumber()])
+    // }
+    // return newArr
+
+
+    // let arr = [];
+    // do {
+    //     let ran = Math.floor(Math.random() * questions.length);
+    //     arr = arr.indexOf(ran) > -1 ? arr : arr.concat(questions[ran]);
+    // } while (arr.length < lngth)
+
+    // return arr;
 
     let randomNumArr = randoSequence(questions.length).slice(0, num)
 
@@ -22,9 +39,10 @@ const useRandomQuestions = (num) => {
 
 
 
+
 export default function QuizContainer() {
 
-    const newArr = useRandomQuestions(15)
+    const newArr = useQuestions(15)
 
     return <Quiz
         title="React quiz"
