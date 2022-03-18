@@ -8,9 +8,12 @@ const useQuestions = (arr, num, max) => {
 
     const resultsArr = []
     const randomNumbers = randoSequence(0, max).slice(0, num)
+    console.log(randomNumbers)
     for (let i = 0; i < randomNumbers.length; i++) {
-        resultsArr.push(arr[i])
+        resultsArr.push(arr[randomNumbers[i]])
     }
+    console.log(resultsArr)
+
     return resultsArr;
 
 }
