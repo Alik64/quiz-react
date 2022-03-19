@@ -34,8 +34,7 @@ const useQuestions = (arr, num, max) => {
     for (let j = 0; j < randomArr.length; j++) {
         resultsArr.push(questions[randomArr[j]])
     }
-    console.log(randomArr)
-    console.log(resultsArr)
+
 
     return resultsArr
 

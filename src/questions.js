@@ -24,10 +24,10 @@ export const questions = [
         question: "How do you fix the syntax error that results from running this code?",
         code: [
             { line: 1, text: "const person =(firstName, lastName) =>" },
-            { line: 2, text: "\t {" },
-            { line: 3, text: "\t first: firstName," },
-            { line: 4, text: "\t \t  last: lastName" },
-            { line: 5, text: "\t }" },
+            { line: 2, text: "  {" },
+            { line: 3, text: "  first: firstName," },
+            { line: 4, text: "     last: lastName" },
+            { line: 5, text: "  }" },
             { line: 6, text: "console.log(person('Jill', 'Wilson'))" },
 
         ],
@@ -144,7 +144,7 @@ export const questions = [
         question: "If you created a component called Dish and rendered it to the DOM, what type of element would be rendered?",
         code: [
             { line: 1, text: "function Dish() {" },
-            { line: 2, text: "\t return <h1>Mac and Cheese</h1>;" },
+            { line: 2, text: "  return <h1>Mac and Cheese</h1>;" },
             { line: 3, text: "}" },
             { line: 4, text: "\r" },
             { line: 5, text: "ReactDOM.render(<Dish />, document.getElementById('root'));" },
@@ -171,13 +171,13 @@ export const questions = [
         question: "What property do you need to add to the Suspense component in order to display a spinner or loading state?",
         code: [
             { line: 1, text: "function MyComponent() {" },
-            { line: 2, text: "\t return (" },
-            { line: 3, text: "\t \t  <Suspense>" },
-            { line: 4, text: "\t \t \t <div>" },
-            { line: 5, text: "\t \t \t \t <Message\>" },//eslint-disable-line
-            { line: 6, text: "\t \t \t </div>" },
-            { line: 7, text: "\t \t  </Suspense>" },
-            { line: 8, text: "\t );" },
+            { line: 2, text: "  return (" },
+            { line: 3, text: "     <Suspense>" },
+            { line: 4, text: "      <div>" },
+            { line: 5, text: "        <Message\>" },//eslint-disable-line
+            { line: 6, text: "      </div>" },
+            { line: 7, text: "     </Suspense>" },
+            { line: 8, text: "  );" },
             { line: 9, text: "}" },
 
         ],
@@ -231,11 +231,11 @@ export const questions = [
         question: "How do you destructure the properties that are sent to the Dish component?",
         code: [
             { line: 1, text: "function Dish(props) {" },
-            { line: 2, text: "\t return (" },
-            { line: 3, text: "\t \t  <h1>" },
-            { line: 4, text: "\t \t \t {props.name} {props.cookingTime}" },
-            { line: 5, text: "\t \t  <h1>" },
-            { line: 6, text: "\t );" },
+            { line: 2, text: "  return (" },
+            { line: 3, text: "     <h1>" },
+            { line: 4, text: "      {props.name} {props.cookingTime}" },
+            { line: 5, text: "     <h1>" },
+            { line: 6, text: "  );" },
             { line: 7, text: "}" }],
         answers: [
             { id: 1, text: "function Dish([name, cookingTime]) { return <h1>{name} {cookingTime}</h1>; }", code: true },
@@ -302,7 +302,7 @@ export const questions = [
         question: "You have written the following code but nothing is rendering. How do you fix this problem?",
         code: [
             { line: 1, text: "const Heading = () => {" },
-            { line: 2, text: "\t <h1>Hello!</h1>;" },
+            { line: 2, text: "  <h1>Hello!</h1>;" },
             { line: 3, text: "};" }
         ],
         answers: [
@@ -370,7 +370,7 @@ export const questions = [
         question: "What is [e.target.id] called in the following code snippet?",
         code: [
             { line: 1, text: "handleChange(e) {" },
-            { line: 2, text: "\t this.setState({ [e.target.id]: e.target.value })" },
+            { line: 2, text: "  this.setState({ [e.target.id]: e.target.value })" },
             { line: 3, text: "};" }
         ],
         answers: [
@@ -384,9 +384,9 @@ export const questions = [
         question: "What is the name of this component?",
         code: [
             { line: 1, text: "class Clock extends React.Component {" },
-            { line: 2, text: "\t render() {" },
-            { line: 3, text: "\t \t return <h1>Look at the time: {time}</h1>;" },
-            { line: 4, text: "\t };" },
+            { line: 2, text: "  render() {" },
+            { line: 3, text: "    return <h1>Look at the time: {time}</h1>;" },
+            { line: 4, text: "  };" },
             { line: 5, text: "};" }
         ],
         answers: [
@@ -436,9 +436,9 @@ export const questions = [
         question: "What do you need to change about this code to get it to run?",
         code: [
             { line: 1, text: "class clock extends React.Component {" },
-            { line: 2, text: "\t render() {" },
-            { line: 3, text: "\t \t return <h1>Look at the time: {time}</h1>;" },
-            { line: 4, text: "\t };" },
+            { line: 2, text: "  render() {" },
+            { line: 3, text: "    return <h1>Look at the time: {time}</h1>;" },
+            { line: 4, text: "  };" },
             { line: 5, text: "};" }
         ],
         answers: [
@@ -470,14 +470,14 @@ export const questions = [
         question: "Which of the following click event handlers will allow you to pass the name of the person to be hugged? ",
         code: [
             { line: 1, text: "class Huggable extends React.Component {" },
-            { line: 2, text: "\t hug(id) {" },
-            { line: 3, text: "\t \t console.log('hugging' + id);" },
-            { line: 4, text: "\t }" },
-            { line: 5, text: "\t render() {" },
-            { line: 6, text: "\t \t let name = 'kitteh';" },
-            { line: 7, text: "\t \t let button = // Missing Code" },
-            { line: 8, text: "\t \t return button;" },
-            { line: 9, text: "\t }" },
+            { line: 2, text: "  hug(id) {" },
+            { line: 3, text: "    console.log('hugging' + id);" },
+            { line: 4, text: "  }" },
+            { line: 5, text: "  render() {" },
+            { line: 6, text: "    let name = 'kitteh';" },
+            { line: 7, text: "    let button = // Missing Code" },
+            { line: 8, text: "    return button;" },
+            { line: 9, text: "  }" },
             { line: 10, text: "};" }
         ],
         answers: [
@@ -491,8 +491,8 @@ export const questions = [
         question: "How do you invoke setDone only when component mounts, using hooks?",
         code: [
             { line: 1, text: "function MyComponent(props) {" },
-            { line: 2, text: "\t const [done, setDone] = useState(false);" },
-            { line: 3, text: "\t return <h1>Done: {done}</h1>;" },
+            { line: 2, text: "  const [done, setDone] = useState(false);" },
+            { line: 3, text: "  return <h1>Done: {done}</h1>;" },
             { line: 4, text: "}" }],
         answers: [
             { id: 1, text: "useEffect(() => { setDone(true); });", code: true },
@@ -535,7 +535,7 @@ export const questions = [
         question: "What will happen when this useEffect Hook is executed, assuming name is not already equal to John?",
         code: [
             { line: 1, text: "useEffect(() => {" },
-            { line: 2, text: "\t setName('John');" },
+            { line: 2, text: "  setName('John');" },
             { line: 3, text: "}, [name]);" }],
 
         answers:
@@ -558,11 +558,11 @@ export const questions = [
         question: "You have created a new method in a class component called handleClick, but it is not working. Which code is missing?",
         code: [
             { line: 1, text: "class Button extends React.Component{" },
-            { line: 2, text: "\t constructor(props) {" },
-            { line: 3, text: "\t \t super(props);" },
-            { line: 4, text: "\t \t // Missing line" },
-            { line: 5, text: "\t }" },
-            { line: 6, text: "\t handleClick() {...}" },
+            { line: 2, text: "  constructor(props) {" },
+            { line: 3, text: "    super(props);" },
+            { line: 4, text: "    // Missing line" },
+            { line: 5, text: "  }" },
+            { line: 6, text: "  handleClick() {...}" },
             { line: 7, text: "}" }],
         answers: [
             { id: 1, text: "this.handleClick.bind(this);", code: true, },
@@ -584,13 +584,13 @@ export const questions = [
         question: "If you wanted to display the count state value in the component, what do you need to add to the curly braces in the h1?",
         code: [
             { line: 1, text: "class Ticker extends React.component {" },
-            { line: 2, text: "\t constructor(props) {" },
-            { line: 3, text: "\t \t super(props);            " },
-            { line: 4, text: "\t \t this.state = { count: 0 };            " },
-            { line: 5, text: "\t }" },
-            { line: 6, text: "\t render() {" },
-            { line: 7, text: "\t \t return <h1>{}</h1>;" },
-            { line: 8, text: "\t }" },
+            { line: 2, text: "  constructor(props) {" },
+            { line: 3, text: "    super(props);            " },
+            { line: 4, text: "    this.state = { count: 0 };            " },
+            { line: 5, text: "  }" },
+            { line: 6, text: "  render() {" },
+            { line: 7, text: "    return <h1>{}</h1>;" },
+            { line: 8, text: "  }" },
             { line: 9, text: "}" },
         ],
         answers: [
@@ -673,8 +673,8 @@ export const questions = [
         question: "Give the code below, what does the second argument that is sent to the render function describe?",
         code: [
             { line: 1, text: "ReactDOM.render(                " },
-            { line: 2, text: "\t <h1>Hi</h1>" },
-            { line: 3, text: "\t \t document.getElementById('root')" },
+            { line: 2, text: "  <h1>Hi</h1>" },
+            { line: 3, text: "    document.getElementById('root')" },
             { line: 4, text: ")" },
         ],
         answers: [
@@ -709,7 +709,7 @@ export const questions = [
         question: "Which class-based lifecycle method would be called at the same time as this effect Hook?        ",
         code: [
             { line: 1, text: "useEffect(() => {                " },
-            { line: 2, text: "\t // do things" },
+            { line: 2, text: "  // do things" },
             { line: 3, text: "},[])" },
         ],
         answers: [
@@ -769,8 +769,8 @@ export const questions = [
         question: "What is wrong with this code?",
         code: [
             { line: 1, text: "const MyComponent = ({ names }) => ( " },
-            { line: 2, text: "\t <h1>Hello</h1>" },
-            { line: 3, text: "\t <p>Hello again</p>" },
+            { line: 2, text: "  <h1>Hello</h1>" },
+            { line: 3, text: "  <p>Hello again</p>" },
             { line: 4, text: ")" },
         ],
         answers: [
@@ -795,12 +795,12 @@ export const questions = [
         question: "Given this code, what will be printed in the <h1> tag?",
         code: [
             { line: 1, text: "const MyComponent = ({ children }) => (" },
-            { line: 2, text: "\t <h1>{children.length}</h1>" },
+            { line: 2, text: "  <h1>{children.length}</h1>" },
             { line: 3, text: ")" },
             { line: 4, text: "..." },
             { line: 5, text: "<MyComponent>" },
-            { line: 6, text: "\t <p>Hello</p>" },
-            { line: 7, text: "\t <p>Hello again</p>" },
+            { line: 6, text: "  <p>Hello</p>" },
+            { line: 7, text: "  <p>Hello again</p>" },
             { line: 8, text: "</MyComponent>" },
         ],
         answers: [
@@ -847,12 +847,12 @@ export const questions = [
         question: "In this component, how do you display whether the user was logged in or not?",
         code: [
             { line: 1, text: "render() {" },
-            { line: 2, text: "\t const isLoggedIn = this.state.isLoggedIn;" },
-            { line: 3, text: "\t return (" },
-            { line: 4, text: "\t \t <div>" },
-            { line: 5, text: "\t \t \t The user is" },
-            { line: 6, text: "\t \t </div>" },
-            { line: 7, text: "\t );" },
+            { line: 2, text: "  const isLoggedIn = this.state.isLoggedIn;" },
+            { line: 3, text: "  return (" },
+            { line: 4, text: "    <div>" },
+            { line: 5, text: "      The user is" },
+            { line: 6, text: "    </div>" },
+            { line: 7, text: "  );" },
             { line: 8, text: "}" },
         ],
         answers: [
@@ -886,12 +886,12 @@ export const questions = [
         question: "Add the code that will fire the photon torpedoes when the button is clicked.",
         code: [
             { line: 1, text: "class StarTrekkin extends React.Component {" },
-            { line: 2, text: "\t firePhotonTorpedoes(e) {                " },
-            { line: 3, text: "\t \t console.log('pew pew');   " },
-            { line: 4, text: "\t }" },
-            { line: 5, text: "\t render() {                " },
-            { line: 6, text: "\t \t return; // Missing code   " },
-            { line: 7, text: "\t };" },
+            { line: 2, text: "  firePhotonTorpedoes(e) {                " },
+            { line: 3, text: "    console.log('pew pew');   " },
+            { line: 4, text: "  }" },
+            { line: 5, text: "  render() {                " },
+            { line: 6, text: "    return; // Missing code   " },
+            { line: 7, text: "  };" },
             { line: 8, text: "}" },
         ],
         answers: [
