@@ -61,7 +61,7 @@ export default function Quiz({ newArr, title, logo }) {
                         {question.code &&
                             <div className='codeContainer'>
                                 <div className='quiz_code'>
-                                    <code>{question.code.map(line => <p key={line.line}>{line.text}</p>)}</code>
+                                    <pre>{question.code.map(line => <p key={line.line}>{line.text}</p>)}</pre>
                                 </div>
                             </div>}
                         <div className='quiz_answers'>
