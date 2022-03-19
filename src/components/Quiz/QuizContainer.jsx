@@ -23,7 +23,7 @@ const useQuestions = (arr, num, max) => {
 
     for (let i = 0; i < num; i++) {
         do {
-            randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            randomNumber = Math.floor(Math.random() * (max - min)) + min;
             verif = randomArr.includes(randomNumber);
             if (!verif) {
                 randomArr.push(randomNumber);
@@ -34,7 +34,8 @@ const useQuestions = (arr, num, max) => {
     for (let j = 0; j < randomArr.length; j++) {
         resultsArr.push(questions[randomArr[j]])
     }
-
+    console.log(randomArr)
+    console.log(resultsArr)
 
     return resultsArr
 
