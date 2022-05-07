@@ -1,6 +1,9 @@
 import React from 'react'
+
 import { Link } from 'react-router-dom'
+
 import logo from '../../assets/images/reactlogo.png'
+
 export default function Home() {
     return (
         <div className='home'>
