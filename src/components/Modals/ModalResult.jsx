@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 import { AppContext } from "../../context/appContext";
 import "./Modal.css";
 
@@ -56,9 +55,9 @@ export default function ModalResult() {
 }
 
 function showYourSkill(score) {
-    if(isNaN(score)){
-        console.log('Warning: The score should be an integer!')
-    }
+  if (isNaN(score)) {
+    console.log("Warning: The score should be an integer!");
+  }
   switch (true) {
     case score < 3:
       return <h2>Noob</h2>;
@@ -74,9 +73,10 @@ function showYourSkill(score) {
       return <h2>Master</h2>;
     case score === 15:
       return <h2>Kill it , man! :)</h2>;
+    default:
+      return;
   }
 }
-
 
 // Test for showYourSkill()
 /*
