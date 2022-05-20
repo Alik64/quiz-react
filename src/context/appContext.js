@@ -8,7 +8,6 @@ export function AppContextProvider({ children }) {
   const [modalrules, setModalRules] = useState(true);
   const [modalresults, setModalResults] = useState(false);
   const [good, setGood] = useState(0);
-  console.log("nuber of errors", err);
 
   const onCheckAnswer = (condit) => {
     if (condit !== undefined) {
