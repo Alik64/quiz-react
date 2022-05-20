@@ -7,7 +7,6 @@
 export const useRandomItems = (arr, num, max) => {
   const resultsArr = [];
   const randomArr = [];
-
   const min = 0;
 
   let verif, randomNumber;
