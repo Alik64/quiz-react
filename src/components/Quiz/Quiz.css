@@ -9,6 +9,7 @@
   margin: 0 auto;
   max-width: 1200px;
 }
+
 .quiz_header {
   position: fixed;
   top: 0;
@@ -17,6 +18,7 @@
   padding: 0 50px;
   background-color: #fff;
 }
+
 .quiz_header_content {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,9 +33,11 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.quiz_score > * {
+
+.quiz_score>* {
   margin-bottom: 5px;
 }
+
 .quiz_info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,6 +47,7 @@
   align-items: center;
   position: relative;
 }
+
 .quiz_info h1 {
   position: absolute;
   width: 200px;
@@ -50,10 +55,12 @@
   -webkit-filter: drop-shadow(var(--shadow));
   filter: drop-shadow(var(--shadow));
 }
+
 .quiz_logo {
   width: 80px;
   pointer-events: none;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .quiz_logo {
     -webkit-animation: App-logo-spin infinite 20s linear;
@@ -66,6 +73,7 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -77,6 +85,7 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -103,15 +112,11 @@
 }
 
 .codeContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   overflow-x: scroll;
-  -webkit-box-shadow: var(--lightShadow);
   box-shadow: var(--lightShadow);
+  margin-bottom: 20px;
 }
 
 .quiz_code {
@@ -121,6 +126,7 @@
   width: -moz-max-content;
   width: max-content;
 }
+
 .quiz_code p {
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
@@ -138,6 +144,7 @@
 
   margin: 5px 0;
 }
+
 .quiz_answerBtn {
   width: 350px;
   max-width: 500px;
@@ -163,6 +170,7 @@
   justify-content: center;
   padding: 50px;
 }
+
 .quiz_validateBtn {
   font-size: 17px;
   padding: 25px 60px;
@@ -173,15 +181,18 @@
   .codeContainer {
     min-width: 295px;
   }
+
   .quiz_answerBtn {
     max-width: 310px;
   }
 }
+
 @media screen and (min-width: 420px) {
   .codeContainer {
     overflow-x: hidden;
   }
 }
+
 @media screen and (min-width: 590px) {
   .quiz_answerBtn {
     min-width: 525px;

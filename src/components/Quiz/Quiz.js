@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 
 import { AppContext } from "../../context/appContext";
@@ -20,7 +20,7 @@ export default function Quiz({ newQuestions, title }) {
   } = useContext(AppContext);
 
   const handleCheckAnswer = (e, bool) => {
-    if (bool) {
+    if (bool !== undefined) {
       onCheckAnswer(bool);
       e.target.style.color = "var(--green)";
       e.target.disabled = "true";
@@ -29,6 +29,7 @@ export default function Quiz({ newQuestions, title }) {
         onCheckAnswer(bool);
       }
       onCheckAnswer(bool);
+
       e.target.style.color = "var(--red)";
       e.target.disabled = "true";
     }
@@ -53,22 +54,27 @@ export default function Quiz({ newQuestions, title }) {
       </div>
 
       <div className="quiz_content">
-        {newQuestions.map((question) => (
-          <div className="quiz_question" key={question.id}>
-              <Question data={question}/>
-            <div className="quiz_answers">
-              {question.answers.map((answer) => (
-                <button
-                  className="quiz_answerBtn"
-                  onClick={(e) => handleCheckAnswer(e, answer.right)}
-                  key={answer.id}
-                >
-                  {answer.code ? <code>{answer.text}</code> : answer.text}
-                </button>
-              ))}
-            </div>
-          </div>
-        ))}
+        {useMemo(
+          () =>
+            newQuestions.map((question) => (
+              <div className="quiz_question" key={question.id}>
+                <Question data={question} />
+                <div className="quiz_answers">
+                  {question.answers.map((answer) => (
+                    <button
+                      data-testid="quiz_answerBtn"
+                      className="quiz_answerBtn"
+                      onClick={(e) => handleCheckAnswer(e, answer.right)}
+                      key={answer.id}
+                    >
+                      {answer.code ? <code>{answer.text}</code> : answer.text}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )),
+          [newQuestions]
+        )}
       </div>
       <div className="quiz_footer">
         <button
