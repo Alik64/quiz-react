@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Question = ({ data }) => {
+  console.log("Question render");
   return (
     <>
       <h2> {data.question}</h2>

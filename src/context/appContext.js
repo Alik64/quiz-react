@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AppContext = createContext();
 
@@ -8,23 +8,26 @@ export function AppContextProvider({ children }) {
   const [modalrules, setModalRules] = useState(true);
   const [modalresults, setModalResults] = useState(false);
   const [good, setGood] = useState(0);
+  console.log("nuber of errors", err);
 
-  const onCheckAnswer = (bool) => {
-    if (bool) {
-      setScore(score + 1);
-      setGood(good + 1);
+  const onCheckAnswer = (condit) => {
+    if (condit !== undefined) {
+      setScore((prevScore) => prevScore + 1);
+      setGood((prevGood) => prevGood + 1);
     } else {
-      if (err >= 3) {
-        setScore(score - 1);
-      }
-      setErr(err + 1);
+      setErr((prevErr) => prevErr + 1);
     }
   };
-  const modalRulesToogle = (bool) => {
-    setModalRules(bool);
+  useEffect(() => {
+    if (err >= 3) {
+      setScore((prevScore) => prevScore - 1);
+    }
+  }, [err]);
+  const modalRulesToogle = (condit) => {
+    setModalRules(condit);
   };
-  const modalResultsToggle = (bool) => {
-    setModalResults(bool);
+  const modalResultsToggle = (condit) => {
+    setModalResults(condit);
   };
 
   return (
