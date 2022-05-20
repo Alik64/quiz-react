@@ -4,6 +4,32 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../context/appContext";
 import "./Modal.css";
 
+export const showYourSkill = (number) => {
+  switch (true) {
+    case number === null:
+      return "Warning: Can't use 'null' as an argument.";
+    case isNaN(number):
+      return `Warning: "${number}" is a String, should only use an integer!`;
+    case number < 0:
+      return "Warning: RTFM right now!";
+    case number < 3:
+      return "Noob";
+    case number < 5:
+      return "Beginner";
+    case number < 7:
+      return "Medium";
+    case number < 9:
+      return "Advanced";
+    case number < 13:
+      return "Pro";
+    case number < 15:
+      return "Master";
+    case number === 15:
+      return "Kill it man!";
+    case number > 15:
+      return `Warning:${number} is out of range, How could you get it?!?!?`;
+  }
+};
 export default function ModalResult() {
   const { modalResultsToggle, good, err, setScore, setGood, setErr, score } =
     useContext(AppContext);
@@ -53,35 +79,3 @@ export default function ModalResult() {
     </div>
   );
 }
-
-function showYourSkill(score) {
-  if (isNaN(score)) {
-    console.log("Warning: The score should be an integer!");
-  }
-  switch (true) {
-    case score < 3:
-      return <h2>Noob</h2>;
-    case score < 5:
-      return <h2>Beginner</h2>;
-    case score < 7:
-      return <h2>Medium</h2>;
-    case score < 10:
-      return <h2>Advanced</h2>;
-    case score < 13:
-      return <h2>Pro</h2>;
-    case score < 15:
-      return <h2>Master</h2>;
-    case score === 15:
-      return <h2>Kill it , man! :)</h2>;
-    default:
-      return;
-  }
-}
-
-// Test for showYourSkill()
-/*
-for (let i = 0; i<=15; i++){
-    console.log(i,showYourSkill(i).props.children)
-}
-showYourSkill('haha')
-*/

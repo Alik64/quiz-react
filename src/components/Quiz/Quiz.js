@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { AppContext } from "../../context/appContext";
@@ -18,6 +18,10 @@ export default function Quiz({ newQuestions, title }) {
     err,
     score,
   } = useContext(AppContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleCheckAnswer = (e, bool) => {
     if (bool) {
@@ -55,7 +59,7 @@ export default function Quiz({ newQuestions, title }) {
       <div className="quiz_content">
         {newQuestions.map((question) => (
           <div className="quiz_question" key={question.id}>
-              <Question data={question}/>
+            <Question data={question} />
             <div className="quiz_answers">
               {question.answers.map((answer) => (
                 <button
