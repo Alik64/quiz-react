@@ -70,7 +70,12 @@ export default function ModalResult() {
               </div>
             </div>
 
-            <button onClick={handleValidation} className="modal_btn home_btn">
+            <button
+              id="validate-btn"
+              data-testid="validate-btn"
+              onClick={handleValidation}
+              className="modal_btn home_btn"
+            >
               Close
             </button>
           </div>

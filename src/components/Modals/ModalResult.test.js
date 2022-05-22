@@ -2,9 +2,19 @@ import ModalResult from "./ModalResult";
 import { showYourSkill } from "./ModalResult";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { AppContextProvider } from "../../context/appContext";
+import { BrowserRouter } from "react-router-dom";
 
-describe("<ModalResult/>", () => {
-  // to do
+describe("<<ModalResult/>>", () => {
+  beforeEach(() => {
+    render(
+      <BrowserRouter>
+        <AppContextProvider>
+          <ModalResult />
+        </AppContextProvider>
+      </BrowserRouter>
+    );
+  });
 });
 
 describe("showYourSkill()", () => {

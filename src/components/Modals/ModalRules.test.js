@@ -19,6 +19,4 @@ describe("<ModalRules/>", () => {
     fireEvent.click(toggleBtn);
     expect(screen.queryByTestId("toggle-elem")).toBeNull();
   });
-
-  test("");
 });
