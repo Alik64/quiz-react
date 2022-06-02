@@ -1,4 +1,6 @@
-# Déployé sur Netlify [Ultimate-React-Quiz](https://ultimate-react-quiz.netlify.app)
+# Ultimate React⚛️ Quiz
+
+Déployé sur Netlify [Ultimate-React-Quiz](https://ultimate-react-quiz.netlify.app)
 
 ## 📑 Contexte:
 
