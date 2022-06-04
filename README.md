@@ -20,4 +20,5 @@ Un algorithme génère 15 questions sur une multitude de sujets, du plus
 
 ## 🚀 Résultat:
 
-Aujourd'hui le projet est toujours en cours de développement. Les mises à jours importants sont à venir.
+Aujourd'hui le projet est 💯 fonctionnel. Les mises à jours et diverses améliorations sont à venir.
+N'hésitez pas à le consulter et me retourner les éventuels bugs 🪲
