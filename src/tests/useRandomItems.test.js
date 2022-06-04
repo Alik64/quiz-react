@@ -1,6 +1,6 @@
-import { useRandomItems } from "./useRandomItems";
+import { useRandomItems } from "../utils/customHook/useRandomItems";
 
-import questions from "../../questions";
+import questions from "../questions";
 describe("useRandomItems()", () => {
   let questions = [
     {

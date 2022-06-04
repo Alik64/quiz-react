@@ -1,7 +1,7 @@
-import ModalRules from "./ModalRules";
+import ModalRules from "../components/Modals/ModalRules";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { AppContextProvider } from "../../context/appContext";
+import { AppContextProvider } from "../context/appContext";
 
 describe("<ModalRules/>", () => {
   const modalRulesToogle = false;
