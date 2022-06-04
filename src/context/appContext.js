@@ -18,7 +18,7 @@ export function AppContextProvider({ children }) {
     }
   };
   useEffect(() => {
-    if (err >= 3) {
+    if (err > 3) {
       setScore((prevScore) => prevScore - 1);
     }
   }, [err]);

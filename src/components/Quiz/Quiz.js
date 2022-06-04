@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 
 import { AppContext } from "../../context/appContext";
 
-import ModalRules from "../Modals/ModalRules";
-import ModalResult from "../Modals/ModalResult";
 import logo from "../../assets/images/reactlogo.png";
-import "./Quiz.css";
 import Question from "./Question";
+
+import ModalResult from "../Modals/ModalResult";
+import ModalRulesUI from "../Modals/ModalRulesUI";
+
+import "./Quiz.css";
 
 export default function Quiz({ newQuestions, title }) {
   const {
@@ -37,7 +39,7 @@ export default function Quiz({ newQuestions, title }) {
 
   return (
     <div className="quiz">
-      {modalrules && <ModalRules />}
+      {modalrules && <ModalRulesUI />}
       {modalresults && <ModalResult />}
 
       <div className="quiz_header">
