@@ -12,14 +12,8 @@ import ModalRulesUI from "../Modals/ModalRulesUI";
 import "./Quiz.css";
 
 export default function Quiz({ newQuestions, title }) {
-  const {
-    modalResultsToggle,
-    modalresults,
-    modalrules,
-    onCheckAnswer,
-    err,
-    score,
-  } = useContext(AppContext);
+  const { modalName, setModalName, onCheckAnswer, err, score } =
+    useContext(AppContext);
 
   const handleCheckAnswer = (e, bool) => {
     if (bool !== undefined) {
@@ -31,7 +25,6 @@ export default function Quiz({ newQuestions, title }) {
         onCheckAnswer(bool);
       }
       onCheckAnswer(bool);
-
       e.target.style.color = "var(--red)";
       e.target.disabled = "true";
     }
@@ -39,8 +32,8 @@ export default function Quiz({ newQuestions, title }) {
 
   return (
     <div className="quiz">
-      {modalrules && <ModalRulesUI />}
-      {modalresults && <ModalResult />}
+      {modalName === "Rules" && <ModalRulesUI />}
+      {modalName === "Results" && <ModalResult />}
 
       <div className="quiz_header">
         <div className="quiz_header_content">
@@ -80,7 +73,7 @@ export default function Quiz({ newQuestions, title }) {
       </div>
       <div className="quiz_footer">
         <button
-          onClick={() => modalResultsToggle(true)}
+          onClick={() => setModalName("Results")}
           className="home_btn quiz_validateBtn"
         >
           {" "}

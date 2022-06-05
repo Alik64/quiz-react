@@ -31,12 +31,12 @@ export const showYourSkill = (number) => {
   }
 };
 export default function ModalResult() {
-  const { modalResultsToggle, good, err, setScore, setGood, setErr, score } =
+  const { setModalName, good, err, setScore, setGood, setErr, score } =
     useContext(AppContext);
   const navigate = useNavigate();
 
   const handleValidation = () => {
-    modalResultsToggle(false);
+    setModalName(null);
     setScore(0);
     setGood(0);
     setErr(0);

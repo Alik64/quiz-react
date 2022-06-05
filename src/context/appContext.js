@@ -7,9 +7,7 @@ export function AppContextProvider({ children }) {
   const [err, setErr] = useState(0);
   const [good, setGood] = useState(0);
 
-  const [modalrules, setModalRules] = useState(true);
-  const [modalresults, setModalResults] = useState(false);
-  const [modalName, setModalName] = useState(null); // Rules, Results, null
+  const [modalName, setModalName] = useState("Rules"); // Rules, Results, null
 
   const onCheckAnswer = (condit) => {
     if (condit !== undefined) {
@@ -19,37 +17,25 @@ export function AppContextProvider({ children }) {
       setErr((prevErr) => prevErr + 1);
     }
   };
+
   useEffect(() => {
     if (err > 3) {
       setScore((prevScore) => prevScore - 1);
     }
   }, [err]);
 
-  const modalRulesToogle = (condit) => {
-    setModalRules(condit);
-  };
-  const modalResultsToggle = (condit) => {
-    setModalResults(condit);
-  };
-  const modalNameToggle = (name) => {
-    setModalName(name);
-  };
-
   return (
     <AppContext.Provider
       value={{
-        setScore,
-        modalNameToggle,
-        modalResultsToggle,
-        modalresults,
-        modalRulesToogle,
-        modalrules,
+        modalName,
+        setModalName,
         onCheckAnswer,
-        setGood,
-        setErr,
         good,
+        setGood,
         err,
+        setErr,
         score,
+        setScore,
       }}
     >
       {children}
