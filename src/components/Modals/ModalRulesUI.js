@@ -8,10 +8,9 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 350,
-  background:
-    "linear-gradient(to right bottom, hsl(236, 50%, 50%), hsl(195, 50%, 50%))",
+  background: "#EAEAEA",
   border: "1px solid #fff",
-  color: "#EAEAEA",
+
   borderRadius: 5,
   boxShadow: 24,
   p: 3,
@@ -50,10 +49,13 @@ export default function ModalRulesUI() {
               If you make a mistake you can retry until you find a good answer.
             </Typography>
             <Typography className="modal-modal-description" align="center">
-              You have a right to make <strong>3</strong> errors. Each
-              additional error will decrease your score by <strong>1</strong>{" "}
-              point.
+              You have a right to make <strong>3</strong> errors.
             </Typography>
+            <Typography className="modal-modal-description" align="center">
+              Each additional error will decrease your score by{" "}
+              <strong>1</strong> point.
+            </Typography>
+
             <Typography
               id="modal-modal-description"
               variant="h5"
@@ -64,10 +66,9 @@ export default function ModalRulesUI() {
           </Stack>
           <Button
             onClick={handleClose}
-            variant="outlined"
+            variant="contained"
             size="large"
-            sx={{ mt: 3, textShadow: "1px 2px 1px rgba(0, 0, 0, 0.3)" }}
-            color="inherit"
+            sx={{ mt: 3, textTransform: "none" }}
           >
             I'm ready !
           </Button>
