@@ -3,14 +3,13 @@ import { useContext } from "react";
 import { AppContext } from "../../context/appContext";
 
 const style = {
-  position: "absolute",
+  position: "fixed",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 350,
   background: "#EAEAEA",
   border: "1px solid #fff",
-
   borderRadius: 5,
   boxShadow: 24,
   p: 3,
@@ -20,13 +19,13 @@ const style = {
 };
 
 export default function ModalRulesUI() {
-  const { modalrules, modalRulesToogle } = useContext(AppContext);
-  const handleClose = () => modalRulesToogle(false);
+  const { modalName, setModalName } = useContext(AppContext);
+  const handleClose = () => setModalName(null);
 
   return (
     <div>
       <Modal
-        open={modalrules}
+        open={modalName}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -69,6 +68,7 @@ export default function ModalRulesUI() {
             variant="contained"
             size="large"
             sx={{ mt: 3, textTransform: "none" }}
+            data-testid="toggle-btn"
           >
             I'm ready !
           </Button>

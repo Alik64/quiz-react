@@ -1,4 +1,4 @@
-import ModalRules from "../components/Modals/ModalRules";
+import ModalRulesUI from "../components/Modals/ModalRulesUI";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { AppContextProvider } from "../context/appContext";
@@ -8,7 +8,7 @@ describe("<ModalRules/>", () => {
   beforeEach(() => {
     render(
       <AppContextProvider>
-        <ModalRules />
+        <ModalRulesUI />
       </AppContextProvider>
     );
   });

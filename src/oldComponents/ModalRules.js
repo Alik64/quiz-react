@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { AppContext } from "../../context/appContext";
+import { AppContext } from "../context/appContext";
 import "./Modal.css";
 
 export default function ModalRules() {
-  const { modalRulesToogle } = useContext(AppContext);
+  const { modalNameToggle } = useContext(AppContext);
 
   return (
     <div className="modal">
@@ -39,7 +39,7 @@ export default function ModalRules() {
             <h2>Good luck!</h2>
             <button
               data-testid="toggle-btn"
-              onClick={() => modalRulesToogle(false)}
+              onClick={() => modalNameToggle(null)}
               className="modal_btn home_btn"
             >
               I'm ready!
