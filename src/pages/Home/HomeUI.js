@@ -4,11 +4,18 @@ import logo from "../../assets/images/reactlogo.png";
 
 import { Container, Stack, Box, Button, Typography } from "@mui/material";
 
+const containerStyle = {
+  height: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+};
+
 export const HomeUI = () => {
   return (
-    <Container fixed maxWidth="lg">
+    <Container maxWidth="lg" sx={containerStyle}>
       <Stack
-        sx={{ mt: 20 }}
+        sx={{ pt: 5 }}
         direction="column"
         justifyContent="center"
         alignItems="center"
