@@ -8,8 +8,10 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 350,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
+  background:
+    "linear-gradient(to right bottom, hsl(236, 50%, 50%), hsl(195, 50%, 50%))",
+  border: "1px solid #fff",
+  color: "#EAEAEA",
   borderRadius: 5,
   boxShadow: 24,
   p: 3,
@@ -35,19 +37,19 @@ export default function ModalRulesUI() {
             <Typography id="modal-modal-title" variant="h4" component="h1">
               Rules
             </Typography>
-            <Typography id="modal-modal-description">
+            <Typography className="modal-modal-description">
               You should answer to <strong>15</strong> questions.
             </Typography>
-            <Typography id="modal-modal-description">
+            <Typography className="modal-modal-description">
               Every positive answer give you <strong>1</strong> point.
             </Typography>
-            <Typography id="modal-modal-description">
+            <Typography className="modal-modal-description">
               Only <strong>1</strong> good answer by question.
             </Typography>
-            <Typography id="modal-modal-description" align="center">
+            <Typography className="modal-modal-description" align="center">
               If you make a mistake you can retry until you find a good answer.
             </Typography>
-            <Typography id="modal-modal-description" align="center">
+            <Typography className="modal-modal-description" align="center">
               You have a right to make <strong>3</strong> errors. Each
               additional error will decrease your score by <strong>1</strong>{" "}
               point.
@@ -62,10 +64,10 @@ export default function ModalRulesUI() {
           </Stack>
           <Button
             onClick={handleClose}
-            variant="contained"
+            variant="outlined"
             size="large"
-            sx={{ mt: 2 }}
-            color="info"
+            sx={{ mt: 3, textShadow: "1px 2px 1px rgba(0, 0, 0, 0.3)" }}
+            color="inherit"
           >
             I'm ready !
           </Button>
