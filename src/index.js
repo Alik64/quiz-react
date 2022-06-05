@@ -7,13 +7,21 @@ import { AppContextProvider } from "./context/appContext";
 import App from "./App";
 
 import "./index.css";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 const root = createRoot(document.getElementById("root"));
 
+const theme = createTheme({
+  typography: {
+    fontFamily: "Times",
+  },
+});
 root.render(
   <BrowserRouter>
     <AppContextProvider>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </AppContextProvider>
   </BrowserRouter>
 );
