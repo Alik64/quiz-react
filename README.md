@@ -22,3 +22,8 @@ Un algorithme génère 15 questions sur une multitude de sujets, du plus
 
 Aujourd'hui le projet est 💯 fonctionnel. Les mises à jours et diverses améliorations sont à venir.
 N'hésitez pas à le consulter et me retourner les éventuels bugs 🪲
+
+## 💻 Environnement technique :
+
+- React
+- Material UI
