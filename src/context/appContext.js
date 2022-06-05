@@ -5,9 +5,11 @@ export const AppContext = createContext();
 export function AppContextProvider({ children }) {
   const [score, setScore] = useState(0);
   const [err, setErr] = useState(0);
+  const [good, setGood] = useState(0);
+
   const [modalrules, setModalRules] = useState(true);
   const [modalresults, setModalResults] = useState(false);
-  const [good, setGood] = useState(0);
+  const [modalName, setModalName] = useState(null); // Rules, Results, null
 
   const onCheckAnswer = (condit) => {
     if (condit !== undefined) {
@@ -22,17 +24,22 @@ export function AppContextProvider({ children }) {
       setScore((prevScore) => prevScore - 1);
     }
   }, [err]);
+
   const modalRulesToogle = (condit) => {
     setModalRules(condit);
   };
   const modalResultsToggle = (condit) => {
     setModalResults(condit);
   };
+  const modalNameToggle = (name) => {
+    setModalName(name);
+  };
 
   return (
     <AppContext.Provider
       value={{
         setScore,
+        modalNameToggle,
         modalResultsToggle,
         modalresults,
         modalRulesToogle,
