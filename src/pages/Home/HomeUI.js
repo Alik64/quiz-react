@@ -1,0 +1,49 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/images/reactlogo.png";
+
+import { Container, Stack, Box, Button, Typography } from "@mui/material";
+
+export const HomeUI = () => {
+  return (
+    <Container fixed maxWidth="lg">
+      <Stack
+        sx={{ mt: 20 }}
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        spacing={5}
+      >
+        <Stack alignItems="center">
+          <img src={logo} alt="react logo" className="home_logo" />
+        </Stack>
+        <Stack spacing={4} alignItems="center">
+          <Typography variant="h4" component="h1" align="center">
+            Welcome to the ultimate React quiz!
+          </Typography>
+
+          <Typography>Let's discover how good you are 🚀</Typography>
+
+          <Link to="/quiz">
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ textTransform: "none" }}
+            >
+              Let's go!
+            </Button>
+          </Link>
+          <Typography sx={{ pt: 10 }}>
+            Created with 💙 by{" "}
+            <a
+              style={{ color: "var(--darkBlue)" }}
+              href="https://www.linkedin.com/in/albert-64/"
+            >
+              Albert
+            </a>
+          </Typography>
+        </Stack>
+      </Stack>
+    </Container>
+  );
+};
