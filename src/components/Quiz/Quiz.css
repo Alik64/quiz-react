@@ -126,16 +126,10 @@
 .quiz_code {
   padding: 10px;
   margin: 10px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 
-.quiz_code p {
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-}
+
 
 .quiz_answers {
   display: -webkit-box;
