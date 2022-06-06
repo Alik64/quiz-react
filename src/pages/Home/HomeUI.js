@@ -40,7 +40,7 @@ export const HomeUI = () => {
               Let's go!
             </Button>
           </Link>
-          <Typography sx={{ pt: 10 }}>
+          <Typography pt={10}>
             Created with 💙 by{" "}
             <a
               style={{ color: "var(--darkBlue)" }}

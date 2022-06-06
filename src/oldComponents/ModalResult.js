@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { AppContext } from "../../context/appContext";
+import { AppContext } from "../context/appContext";
 import "./Modal.css";
 
 export const showYourSkill = (number) => {
