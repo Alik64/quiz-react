@@ -15,5 +15,5 @@ export default function QuizContainer() {
     getItems();
   }, []);
 
-  return <Quiz title="React quiz" newQuestions={items} />;
+  return <Quiz title="Quiz" newQuestions={items} />;
 }

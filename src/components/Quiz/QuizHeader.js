@@ -1,9 +1,19 @@
 import React from "react";
+import {
+  Box,
+  Stack,
+  Button,
+  Modal,
+  Typography,
+  Link,
+  Container,
+} from "@mui/material";
+
 import logo from "../../assets/images/reactlogo.png";
 
 export const QuizHeader = ({ title, score, errors }) => {
   return (
-    <div className="quiz_header">
+    <Container maxWidth="lg">
       <div className="quiz_header_content">
         <div className="quiz_info">
           <img className="quiz_logo" src={logo} alt="logo" />
@@ -14,6 +24,6 @@ export const QuizHeader = ({ title, score, errors }) => {
           <h3 className={errors >= 3 ? "danger" : null}>Errors: {errors}</h3>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
