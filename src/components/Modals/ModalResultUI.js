@@ -1,6 +1,34 @@
-import { Box, Stack, Button, Modal, Typography } from "@mui/material";
+import { Box, Stack, Button, Modal, Typography, Link } from "@mui/material";
 import { useContext } from "react";
 import { AppContext } from "../../context/appContext";
+import { useNavigate } from "react-router-dom";
+
+export const showYourSkill = (number, err) => {
+  switch (true) {
+    case err > 3:
+      return "Too many errors to rate your skill, try again! 🖖";
+    case number === null:
+      return "Warning: Can't use 'null' as an argument.";
+    case isNaN(number):
+      return `Warning: "${number}" is a String, should only use an integer!`;
+    case number < 0:
+      return "RTFM right now! 🤬";
+    case number < 5:
+      return "Noob 👎";
+    case number < 8:
+      return "Beginner 👶";
+    case number < 10:
+      return "Advanced 👍";
+    case number < 13 || (number === 15 && err > 1):
+      return "Pro 👨🏻‍💻";
+    case number < 15 || (number === 15 && err === 1):
+      return "Master ⚛️";
+    case number === 15 && err === 0:
+      return "Kill it man! 🚀";
+    case number > 15:
+      return `Warning:${number} is out of range, How could you get it?!?!?`;
+  }
+};
 
 const style = {
   position: "fixed",
@@ -18,9 +46,26 @@ const style = {
   alignItems: "center",
 };
 
-export default function ModalRulesUI() {
-  const { modalName, setModalName } = useContext(AppContext);
-  const handleClose = () => setModalName(null);
+export default function ModalResultUI() {
+  const {
+    modalName,
+    setModalName,
+    good,
+    setGood,
+    err,
+    setErr,
+    setScore,
+    score,
+  } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  const handleClose = () => {
+    setModalName(null);
+    setScore(0);
+    setGood(0);
+    setErr(0);
+    navigate("/");
+  };
 
   return (
     <div>
@@ -31,37 +76,39 @@ export default function ModalRulesUI() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Stack spacing={1} direction="column" alignItems="center">
+          <Stack spacing={3} direction="column" alignItems="center">
             <Typography id="modal-modal-title" variant="h4" component="h1">
-              Rules
-            </Typography>
-            <Typography className="modal-modal-description">
-              You should answer to <strong>15</strong> questions.
-            </Typography>
-            <Typography className="modal-modal-description">
-              Every positive answer give you <strong>1</strong> point.
-            </Typography>
-            <Typography className="modal-modal-description">
-              Only <strong>1</strong> good answer by question.
-            </Typography>
-            <Typography className="modal-modal-description" align="center">
-              If you make a mistake you can retry until you find a good answer.
-            </Typography>
-            <Typography className="modal-modal-description" align="center">
-              You have a right to make <strong>3</strong> errors.
-            </Typography>
-            <Typography className="modal-modal-description" align="center">
-              Each additional error will decrease your score by{" "}
-              <strong>1</strong> point.
+              You did it!
             </Typography>
 
-            <Typography
-              id="modal-modal-description"
-              variant="h5"
-              component="h2"
-            >
-              Good luck!
+            <Typography className="modal-modal-description" variant="h5">
+              Good answers: {good}
             </Typography>
+            <Typography className="modal-modal-description" variant="h5">
+              Errors: {err}
+            </Typography>
+            <Typography className="modal-modal-description" variant="h5">
+              Your score : {score}
+            </Typography>
+            <Typography
+              className="modal-modal-description"
+              variant="h5"
+              align="center"
+            >
+              Your rating :{" "}
+              <Typography variant="h5" sx={{ color: "darkblue", mt: 2 }}>
+                {showYourSkill(score, err)}
+              </Typography>
+            </Typography>
+
+            <Link
+              underline="hover"
+              target="_blank"
+              rel="noreferrer"
+              href="https://reactjs.org/"
+            >
+              Here you can RTFM
+            </Link>
           </Stack>
           <Button
             onClick={handleClose}
@@ -70,7 +117,7 @@ export default function ModalRulesUI() {
             sx={{ mt: 3, textTransform: "none" }}
             data-testid="toggle-btn"
           >
-            I'm ready !
+            Close
           </Button>
         </Box>
       </Modal>
