@@ -1,29 +1,41 @@
 import React from "react";
-import {
-  Box,
-  Stack,
-  Button,
-  Modal,
-  Typography,
-  Link,
-  Container,
-} from "@mui/material";
+import PropTypes from "prop-types";
+import { Toolbar, Stack, Typography, Container } from "@mui/material";
 
 import logo from "../../assets/images/reactlogo.png";
-
+const style = {
+  height: "120px",
+  position: "fixed",
+  top: "0",
+  left: "0",
+  right: "0",
+  background: "#fff",
+  pt: "1rem",
+};
 export const QuizHeader = ({ title, score, errors }) => {
   return (
-    <Container maxWidth="lg">
-      <div className="quiz_header_content">
-        <div className="quiz_info">
-          <img className="quiz_logo" src={logo} alt="logo" />
-          <h1>{title}</h1>
-        </div>
-        <div className="quiz_score">
-          <h3 className={errors >= 3 ? "danger" : null}>Score: {score}</h3>
-          <h3 className={errors >= 3 ? "danger" : null}>Errors: {errors}</h3>
-        </div>
-      </div>
+    <Container maxWidth="md" sx={style}>
+      <Toolbar>
+        <img src={logo} alt={"react-logo"} className="quiz_logo" />
+        <Typography variant="h4" component="h2" sx={{ flexGrow: 1 }}>
+          {title}
+        </Typography>
+
+        <Stack spacing={1}>
+          <Typography variant="h5" color={errors >= 3 ? "red" : "inherit"}>
+            Score: {score}
+          </Typography>
+          <Typography variant="h5" color={errors >= 3 ? "red" : "inherit"}>
+            Errors: {errors}
+          </Typography>
+        </Stack>
+      </Toolbar>
     </Container>
   );
+};
+
+QuizHeader.propTypes = {
+  score: PropTypes.number,
+  errors: PropTypes.number,
+  title: PropTypes.string,
 };

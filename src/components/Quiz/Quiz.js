@@ -1,6 +1,14 @@
 import React, { useContext, useMemo } from "react";
 import PropTypes from "prop-types";
-
+import {
+  Box,
+  Stack,
+  Button,
+  Modal,
+  Typography,
+  Link,
+  Container,
+} from "@mui/material";
 import { AppContext } from "../../context/appContext";
 
 import Question from "./Question";
@@ -31,7 +39,7 @@ export default function Quiz({ newQuestions, title }) {
   };
 
   return (
-    <div className="quiz">
+    <Container maxWidth="md">
       {modalName === "Rules" && <ModalRulesUI />}
       {modalName === "Results" && <ModalResultUI />}
 
@@ -69,7 +77,7 @@ export default function Quiz({ newQuestions, title }) {
           Validate
         </button>
       </div>
-    </div>
+    </Container>
   );
 }
 

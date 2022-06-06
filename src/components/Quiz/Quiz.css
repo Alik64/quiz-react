@@ -57,7 +57,11 @@
 }
 
 .quiz_logo {
+  position: absolute;
+  left: 16px;
+  z-index: -1;
   width: 80px;
+  height: 80px;
   pointer-events: none;
 }
 

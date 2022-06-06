@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/reactlogo.png";
 
-import { Container, Stack, Box, Button, Typography } from "@mui/material";
+import { Container, Stack, Button, Typography } from "@mui/material";
 
 const containerStyle = {
   height: "100vh",
