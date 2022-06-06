@@ -94,7 +94,7 @@ export default function ModalResultUI() {
             >
               Your rating :{" "}
             </Typography>
-            <Typography variant="h5" sx={{ color: "darkblue" }}>
+            <Typography variant="h5" sx={{ color: "darkblue" }} align="center">
               {showYourSkill(score, err)}
             </Typography>
             <Link

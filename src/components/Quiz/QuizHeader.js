@@ -4,8 +4,9 @@ import { Toolbar, Stack, Typography, Container } from "@mui/material";
 
 import logo from "../../assets/images/reactlogo.png";
 const style = {
-  height: "120px",
+  height: "110px",
   position: "fixed",
+  zIndex: "2",
   top: "0",
   left: "0",
   right: "0",
@@ -22,10 +23,10 @@ export const QuizHeader = ({ title, score, errors }) => {
         </Typography>
 
         <Stack spacing={1}>
-          <Typography variant="h5" color={errors >= 3 ? "red" : "inherit"}>
+          <Typography variant="h6" color={errors >= 3 ? "red" : "inherit"}>
             Score: {score}
           </Typography>
-          <Typography variant="h5" color={errors >= 3 ? "red" : "inherit"}>
+          <Typography variant="h6" color={errors >= 3 ? "red" : "inherit"}>
             Errors: {errors}
           </Typography>
         </Stack>

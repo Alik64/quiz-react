@@ -10,7 +10,7 @@ const Question = ({ data }) => {
   };
   return (
     <>
-      <Typography variant="h6" component="div">
+      <Typography variant="h6" component="div" gutterBottom>
         {data.question}
       </Typography>
       {data.code && (
