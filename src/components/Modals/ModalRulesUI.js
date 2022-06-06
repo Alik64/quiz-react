@@ -19,13 +19,13 @@ const style = {
 };
 
 export default function ModalRulesUI() {
-  const { modalName, setModalName } = useContext(AppContext);
+  const { setModalName } = useContext(AppContext);
   const handleClose = () => setModalName(null);
 
   return (
     <div>
       <Modal
-        open={modalName}
+        open={true}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
