@@ -54,6 +54,7 @@ body {
 
 .home_logo {
   width: 12rem;
+  height: 12rem;
   pointer-events: none;
 }
 
