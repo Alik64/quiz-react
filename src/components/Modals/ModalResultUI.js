@@ -77,7 +77,12 @@ export default function ModalResultUI() {
       >
         <Box sx={style}>
           <Stack spacing={3} direction="column" alignItems="center">
-            <Typography id="modal-modal-title" variant="h4" component="h1">
+            <Typography
+              id="modal-modal-title"
+              variant="h4"
+              component="h1"
+              gutterBottom
+            >
               You did it!
             </Typography>
 

@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 import { AppContext } from "../../context/appContext";
 
-import logo from "../../assets/images/reactlogo.png";
 import Question from "./Question";
 
 import ModalRulesUI from "../Modals/ModalRulesUI";
 import ModalResultUI from "../Modals/ModalResultUI";
 
 import "./Quiz.css";
+import { QuizHeader } from "./QuizHeader";
 
 export default function Quiz({ newQuestions, title }) {
   const { modalName, setModalName, onCheckAnswer, err, score } =
@@ -35,18 +35,7 @@ export default function Quiz({ newQuestions, title }) {
       {modalName === "Rules" && <ModalRulesUI />}
       {modalName === "Results" && <ModalResultUI />}
 
-      <div className="quiz_header">
-        <div className="quiz_header_content">
-          <div className="quiz_info">
-            <img className="quiz_logo" src={logo} alt="logo" />
-            <h1>{title}</h1>
-          </div>
-          <div className="quiz_score">
-            <h3 className={err >= 3 ? "danger" : null}>Score: {score}</h3>
-            <h3 className={err >= 3 ? "danger" : null}>Errors: {err}</h3>
-          </div>
-        </div>
-      </div>
+      <QuizHeader title={title} score={score} errors={err} />
 
       <div className="quiz_content">
         {useMemo(

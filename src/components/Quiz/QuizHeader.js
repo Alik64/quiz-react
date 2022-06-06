@@ -1,0 +1,19 @@
+import React from "react";
+import logo from "../../assets/images/reactlogo.png";
+
+export const QuizHeader = ({ title, score, errors }) => {
+  return (
+    <div className="quiz_header">
+      <div className="quiz_header_content">
+        <div className="quiz_info">
+          <img className="quiz_logo" src={logo} alt="logo" />
+          <h1>{title}</h1>
+        </div>
+        <div className="quiz_score">
+          <h3 className={errors >= 3 ? "danger" : null}>Score: {score}</h3>
+          <h3 className={errors >= 3 ? "danger" : null}>Errors: {errors}</h3>
+        </div>
+      </div>
+    </div>
+  );
+};

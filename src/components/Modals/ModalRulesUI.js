@@ -32,7 +32,12 @@ export default function ModalRulesUI() {
       >
         <Box sx={style}>
           <Stack spacing={1} direction="column" alignItems="center">
-            <Typography id="modal-modal-title" variant="h4" component="h1">
+            <Typography
+              id="modal-modal-title"
+              variant="h4"
+              component="h1"
+              gutterBottom
+            >
               Rules
             </Typography>
             <Typography className="modal-modal-description">
