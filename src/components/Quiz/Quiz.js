@@ -6,8 +6,8 @@ import { AppContext } from "../../context/appContext";
 import logo from "../../assets/images/reactlogo.png";
 import Question from "./Question";
 
-import ModalResult from "../Modals/ModalResult";
 import ModalRulesUI from "../Modals/ModalRulesUI";
+import ModalResultUI from "../Modals/ModalResultUI";
 
 import "./Quiz.css";
 
@@ -33,7 +33,7 @@ export default function Quiz({ newQuestions, title }) {
   return (
     <div className="quiz">
       {modalName === "Rules" && <ModalRulesUI />}
-      {modalName === "Results" && <ModalResult />}
+      {modalName === "Results" && <ModalResultUI />}
 
       <div className="quiz_header">
         <div className="quiz_header_content">
