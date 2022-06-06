@@ -1,75 +1,46 @@
 import React, { useContext, useMemo } from "react";
 import PropTypes from "prop-types";
-
 import { AppContext } from "../../context/appContext";
 
-import Question from "./Question";
-
+import { QuizHeader } from "./QuizHeader";
+import { QuizCard } from "./QuizCard/QuizCard";
 import ModalRulesUI from "../Modals/ModalRulesUI";
 import ModalResultUI from "../Modals/ModalResultUI";
 
+import { Stack, Button, Container } from "@mui/material";
+
 import "./Quiz.css";
-import { QuizHeader } from "./QuizHeader";
 
 export default function Quiz({ newQuestions, title }) {
-  const { modalName, setModalName, onCheckAnswer, err, score } =
-    useContext(AppContext);
-
-  const handleCheckAnswer = (e, bool) => {
-    if (bool !== undefined) {
-      onCheckAnswer(bool);
-      e.target.style.color = "var(--green)";
-      e.target.disabled = "true";
-    } else {
-      if (err >= 3) {
-        onCheckAnswer(bool);
-      }
-      onCheckAnswer(bool);
-      e.target.style.color = "var(--red)";
-      e.target.disabled = "true";
-    }
-  };
+  const { modalName, setModalName, err, score } = useContext(AppContext);
 
   return (
-    <div className="quiz">
+    <Container maxWidth="md">
       {modalName === "Rules" && <ModalRulesUI />}
       {modalName === "Results" && <ModalResultUI />}
 
       <QuizHeader title={title} score={score} errors={err} />
 
-      <div className="quiz_content">
+      <Stack spacing={2} mt={15}>
         {useMemo(
           () =>
             newQuestions.map((question) => (
-              <div className="quiz_question" key={question.id}>
-                <Question data={question} />
-                <div className="quiz_answers">
-                  {question.answers.map((answer) => (
-                    <button
-                      data-testid="quiz_answerBtn"
-                      className="quiz_answerBtn"
-                      onClick={(e) => handleCheckAnswer(e, answer.right)}
-                      key={answer.id}
-                    >
-                      {answer.code ? <code>{answer.text}</code> : answer.text}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              <QuizCard question={question} key={question.id} />
             )),
           [newQuestions]
         )}
-      </div>
+      </Stack>
       <div className="quiz_footer">
-        <button
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ textTransform: "none" }}
           onClick={() => setModalName("Results")}
-          className="home_btn quiz_validateBtn"
         >
-          {" "}
           Validate
-        </button>
+        </Button>
       </div>
-    </div>
+    </Container>
   );
 }
 

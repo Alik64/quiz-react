@@ -26,7 +26,7 @@ export const showYourSkill = (number, err) => {
     case number === 15 && err === 0:
       return "Kill it man! 🚀";
     case number > 15:
-      return `Warning:${number} is out of range, How could you get it?!?!?`;
+      return `Warning:${number} is out of range, How could you get it 🤔?!?!?`;
   }
 };
 
@@ -47,16 +47,8 @@ const style = {
 };
 
 export default function ModalResultUI() {
-  const {
-    modalName,
-    setModalName,
-    good,
-    setGood,
-    err,
-    setErr,
-    setScore,
-    score,
-  } = useContext(AppContext);
+  const { setModalName, good, setGood, err, setErr, setScore, score } =
+    useContext(AppContext);
   const navigate = useNavigate();
 
   const handleClose = () => {
@@ -70,7 +62,7 @@ export default function ModalResultUI() {
   return (
     <div>
       <Modal
-        open={modalName}
+        open={true}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -101,11 +93,10 @@ export default function ModalResultUI() {
               align="center"
             >
               Your rating :{" "}
-              <Typography variant="h5" sx={{ color: "darkblue", mt: 2 }}>
-                {showYourSkill(score, err)}
-              </Typography>
             </Typography>
-
+            <Typography variant="h5" sx={{ color: "darkblue" }} align="center">
+              {showYourSkill(score, err)}
+            </Typography>
             <Link
               underline="hover"
               target="_blank"

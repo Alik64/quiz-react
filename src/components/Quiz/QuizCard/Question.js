@@ -1,12 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Paper, Typography } from "@mui/material";
 
 const Question = ({ data }) => {
+  const codeContainer = {
+    display: "flex",
+    justifyContent: "flex-start",
+    overflowX: "scroll",
+  };
   return (
     <>
-      <h2> {data.question}</h2>
+      <Typography variant="h6" component="div" gutterBottom>
+        {data.question}
+      </Typography>
       {data.code && (
-        <div className="codeContainer">
+        <Paper elevation={1} sx={codeContainer}>
           <div className="quiz_code">
             <pre>
               {data.code.map((line) => (
@@ -14,7 +22,7 @@ const Question = ({ data }) => {
               ))}
             </pre>
           </div>
-        </div>
+        </Paper>
       )}
     </>
   );
