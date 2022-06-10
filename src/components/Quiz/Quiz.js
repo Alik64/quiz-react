@@ -11,7 +11,7 @@ import { Stack, Button, Container } from "@mui/material";
 
 import "./Quiz.css";
 
-export default function Quiz({ newQuestions, title }) {
+export default function Quiz({ newQuestions, title, loading }) {
   const { modalName, setModalName, err, score } = useContext(AppContext);
 
   return (
@@ -24,6 +24,7 @@ export default function Quiz({ newQuestions, title }) {
       <Stack spacing={2} mt={15}>
         {useMemo(
           () =>
+            newQuestions &&
             newQuestions.map((question) => (
               <QuizCard question={question} key={question.id} />
             )),
@@ -47,4 +48,5 @@ export default function Quiz({ newQuestions, title }) {
 Quiz.propTypes = {
   newQuestions: PropTypes.array,
   title: PropTypes.string,
+  loading: PropTypes.bool,
 };
