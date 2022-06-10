@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Quiz from "./Quiz.js";
-import { questions } from "../../questions";
-import { useRandomItems } from "../../utils/customHook/useRandomItems.js";
+
+import logo from "../../assets/images/reactlogo.png";
 
 export default function QuizContainer() {
   const [items, setItems] = useState([]);
-  const newQuestions = useRandomItems(questions, 15, questions.length);
-
-  const getItems = () => {
-    setItems(newQuestions);
-  };
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getItems();
+    const fetchData = async () => {
+      setLoading(true);
+      const result = await axios.get(
+        "https://ultimate-react-quiz.herokuapp.com/api/react-questions"
+      );
+      console.log("result ==>", result);
+      setItems(result.data);
+      setLoading(false);
+    };
+    fetchData();
   }, []);
+  console.log("loading ==>", loading);
 
-  return <Quiz title="Quiz" newQuestions={items} />;
+  if (loading) {
+    return (
+      <div className="quiz_preloader">
+        <img src={logo} alt={"react-logo"} className="quiz_logo" />
+      </div>
+    );
+  }
+  return <Quiz title="Quiz" newQuestions={items} loading={loading} />;
 }

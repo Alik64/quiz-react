@@ -10,6 +10,21 @@
   max-width: 1200px;
 }
 
+.quiz_preloader {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz_preloader img {
+  position: static;
+  width: 200px;
+  height: 200px;
+
+}
+
 .quiz_header {
   position: fixed;
   top: 0;
