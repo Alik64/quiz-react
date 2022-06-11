@@ -12,7 +12,7 @@ export default function QuizContainer() {
     const fetchData = async () => {
       setLoading(true);
       const result = await axios.get(
-        "https://ultimate-react-quiz.herokuapp.com/api/react-questions"
+        "https://ultimate-react-quiz.herokuapp.com/api/questions/react"
       );
       console.log("result ==>", result);
       setItems(result.data);
