@@ -17,6 +17,12 @@
     animation: blink 1.1s step-start 0s infinite;
 }
 
+@-webkit-keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}
+
 @keyframes blink {
     50% {
         opacity: 0.3;

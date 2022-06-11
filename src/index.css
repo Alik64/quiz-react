@@ -1,12 +1,10 @@
 :root {
-  --lightShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --red: #f00;
   --green: #008000;
-  --blue: #61dbfb;
   --darkBlue: #00008b;
 }
 
+/* GENERALS */
 *,
 ::before,
 ::after {
@@ -22,7 +20,6 @@ a {
 
 body {
   color: #242424;
-
 }
 
 .danger {
@@ -33,24 +30,7 @@ body {
   color: var(--green);
 }
 
-
-
-.home {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.home>* {
-  margin-bottom: 50px;
-}
-
-.home_title {
-  font-size: 33px;
-  text-align: center;
-}
+/* HOMEPAGE */
 
 .home_logo {
   width: 12rem;
@@ -58,8 +38,27 @@ body {
   pointer-events: none;
 }
 
+/* QUIZ */
+
+.quiz_code {
+  padding: 10px;
+  margin: 10px;
+  width: max-content;
+}
+
+.quiz_logo {
+  position: absolute;
+  left: 1rem;
+  z-index: -1;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+}
+
+/* MEDIA */
+
 @media (prefers-reduced-motion: no-preference) {
-  .home_logo {
+  .home_logo, .quiz_logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -82,40 +81,4 @@ body {
   to {
     transform: rotate(360deg);
   }
-}
-
-.home_btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px 30px;
-  font-size: 17px;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
-  border-radius: 6px;
-  border: none;
-
-  color: #fff;
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      from(#4b91f7),
-      to(#367af6));
-  background: -o-linear-gradient(top, #4b91f7 0%, #367af6 100%);
-  background: linear-gradient(180deg, #4b91f7 0%, #367af6 100%);
-  background-origin: border-box;
-  -webkit-box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
-  touch-action: manipulation;
-}
-
-.home_btn:focus {
-  -webkit-box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
-    0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-    0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
-    0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-    0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-  outline: 0;
 }
