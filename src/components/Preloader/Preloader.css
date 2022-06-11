@@ -1,0 +1,24 @@
+.quiz_preloader {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz_preloader img {
+    position: static;
+    width: 200px;
+    height: 200px;
+
+}
+
+.preloader_blink {
+    animation: blink 1.1s step-start 0s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}
