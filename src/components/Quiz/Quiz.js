@@ -9,8 +9,6 @@ import ModalResultUI from "../Modals/ModalResultUI";
 
 import { Stack, Button, Container } from "@mui/material";
 
-import "./Quiz.css";
-
 export default function Quiz({ newQuestions, title, loading }) {
   const { modalName, setModalName, err, score } = useContext(AppContext);
 
@@ -31,7 +29,7 @@ export default function Quiz({ newQuestions, title, loading }) {
           [newQuestions]
         )}
       </Stack>
-      <div className="quiz_footer">
+      <Stack alignItems="center" p={5}>
         <Button
           variant="contained"
           size="large"
@@ -40,7 +38,7 @@ export default function Quiz({ newQuestions, title, loading }) {
         >
           Validate
         </Button>
-      </div>
+      </Stack>
     </Container>
   );
 }

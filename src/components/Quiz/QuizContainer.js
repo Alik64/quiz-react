@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Quiz from "./Quiz.js";
 
-import logo from "../../assets/images/reactlogo.png";
+import Preloader from "../Preloader/Preloader.js";
 
 export default function QuizContainer() {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,20 +14,14 @@ export default function QuizContainer() {
       const result = await axios.get(
         "https://ultimate-react-quiz.herokuapp.com/api/questions/react"
       );
-      console.log("result ==>", result);
       setItems(result.data);
       setLoading(false);
     };
     fetchData();
   }, []);
-  console.log("loading ==>", loading);
 
   if (loading) {
-    return (
-      <div className="quiz_preloader">
-        <img src={logo} alt={"react-logo"} className="quiz_logo" />
-      </div>
-    );
+    return <Preloader />;
   }
   return <Quiz title="Quiz" newQuestions={items} loading={loading} />;
 }

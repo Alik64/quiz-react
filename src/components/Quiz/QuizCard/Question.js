@@ -8,6 +8,7 @@ const Question = ({ data }) => {
     justifyContent: "flex-start",
     overflowX: "scroll",
   };
+
   return (
     <>
       <Typography variant="h6" component="div" gutterBottom>
