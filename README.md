@@ -27,3 +27,5 @@ N'hésitez pas à le consulter et me retourner les éventuels bugs 🪲
 
 - React
 - Material UI
+- Node
+- Express
