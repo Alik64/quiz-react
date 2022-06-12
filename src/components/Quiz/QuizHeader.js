@@ -18,7 +18,12 @@ export const QuizHeader = ({ title, score, errors }) => {
     <Container maxWidth="md" sx={style}>
       <Toolbar>
         <img src={logo} alt={"react-logo"} className="quiz_logo" />
-        <Typography variant="h4" component="h2" sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="h4"
+          component="h2"
+          sx={{ flexGrow: 1 }}
+          className="quiz_title"
+        >
           {title}
         </Typography>
 

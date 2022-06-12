@@ -13,7 +13,7 @@ const Preloader = () => {
         sx={{ color: "#00d8ff" }}
         className="preloader_blink"
       >
-        Loading...
+        Loading
       </Typography>
     </Stack>
   );

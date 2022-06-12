@@ -23,5 +23,5 @@ export default function QuizContainer() {
   if (loading) {
     return <Preloader />;
   }
-  return <Quiz title="Quiz" newQuestions={items} loading={loading} />;
+  return <Quiz title="React" newQuestions={items} loading={loading} />;
 }

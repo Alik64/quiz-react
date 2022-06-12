@@ -14,6 +14,8 @@
 }
 
 .preloader_blink {
+    letter-spacing: 2px;
+    filter: drop-shadow(1px 1px 1px #4444ddc7);
     animation: blink 1.1s step-start 0s infinite;
 }
 
