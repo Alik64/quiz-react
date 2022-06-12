@@ -11,7 +11,7 @@ import { Stack, Button, Container } from "@mui/material";
 
 export default function Quiz({ newQuestions, title, loading }) {
   const { modalName, setModalName, err, score } = useContext(AppContext);
-
+  console.log("Quiz render");
   return (
     <Container maxWidth="md">
       {modalName === "Rules" && <ModalRulesUI />}
@@ -26,6 +26,7 @@ export default function Quiz({ newQuestions, title, loading }) {
             newQuestions.map((question) => (
               <QuizCard question={question} key={question.id} />
             )),
+
           [newQuestions]
         )}
       </Stack>

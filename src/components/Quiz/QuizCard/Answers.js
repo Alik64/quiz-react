@@ -12,9 +12,6 @@ export const Answers = ({ data }) => {
       e.target.style.color = "var(--green)";
       e.target.disabled = "true";
     } else {
-      if (err >= 3) {
-        onCheckAnswer(bool);
-      }
       onCheckAnswer(bool);
       e.target.style.color = "var(--red)";
       e.target.disabled = "true";
