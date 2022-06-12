@@ -15,7 +15,6 @@ export function AppContextProvider({ children }) {
       setGood((prevGood) => prevGood + 1);
     } else {
       setErr((prevErr) => prevErr + 1);
-      console.log("error +1 ==>");
     }
   };
 

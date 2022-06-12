@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export const showYourSkill = (number, err) => {
   switch (true) {
-    case err > 3:
+    case err > 4:
       return "Too many errors to rate your skill, try again! 🖖";
     case number === null:
       return "Warning: Can't use 'null' as an argument.";
