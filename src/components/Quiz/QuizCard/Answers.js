@@ -4,7 +4,7 @@ import { AppContext } from "../../../context/appContext";
 import { Button, Stack } from "@mui/material";
 
 export const Answers = ({ data }) => {
-  const { onCheckAnswer, err } = useContext(AppContext);
+  const { onCheckAnswer } = useContext(AppContext);
 
   const handleCheckAnswer = (e, bool) => {
     if (bool !== undefined) {
@@ -25,7 +25,7 @@ export const Answers = ({ data }) => {
           variant="contained"
           color="inherit"
           data-testid="quiz_answerBtn"
-          onClick={(e) => handleCheckAnswer(e, answer.right)}
+          onClick={(e) => handleCheckAnswer(e, answer.isAnswer)}
           key={answer.id}
         >
           {answer.code ? <code>{answer.text}</code> : answer.text}
