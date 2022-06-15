@@ -26,7 +26,7 @@ export const HomeUI = () => {
         </Stack>
         <Stack spacing={4} alignItems="center">
           <Typography variant="h4" component="h1" align="center">
-            Welcome to the ultimate React quiz!
+            Welcome to the Ultimate React Quiz!
           </Typography>
 
           <Typography>Let's discover how good you are 🚀</Typography>
