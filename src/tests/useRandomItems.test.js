@@ -1,4 +1,4 @@
-import { useRandomItems } from "../utils/Helpers/useRandomItems";
+import { getRandomItems } from "../utils/helpers/getRandomItems";
 
 describe("useRandomItems()", () => {
   let questions = [
@@ -88,6 +88,6 @@ describe("useRandomItems()", () => {
   test("should return number of elements === given num ", () => {
     let max = 5;
     let num = 3;
-    expect(useRandomItems(questions, num, max).length).toBe(num);
+    expect(getRandomItems(questions, num, max).length).toBe(num);
   });
 });

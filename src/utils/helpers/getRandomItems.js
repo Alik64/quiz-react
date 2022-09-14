@@ -4,7 +4,7 @@
 // num => How many items from `arr` to keep.
 // max => `arr` length.
 
-export const useRandomItems = (arr, num, max) => {
+export const getRandomItems = (arr, num, max) => {
   const resultsArr = [];
   const randomArr = [];
   const min = 0;
