@@ -1,5 +1,5 @@
-import React, { useContext, useMemo } from "react";
-import PropTypes from "prop-types";
+import { useContext, useMemo } from "react";
+
 import { AppContext } from "../../context/appContext";
 
 import { QuizHeader } from "./QuizHeader";
@@ -8,9 +8,10 @@ import ModalRulesUI from "../Modals/ModalRulesUI";
 import ModalResultUI from "../Modals/ModalResultUI";
 
 import { Stack, Button, Container } from "@mui/material";
+import { QuestionQuiz } from "../../interfaces";
 
 type QuizPropsType = {
-  newQuestions: any[];
+  newQuestions: QuestionQuiz[];
   title: string;
 };
 const Quiz = ({ newQuestions, title }: QuizPropsType) => {
