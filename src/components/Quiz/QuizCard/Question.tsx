@@ -1,5 +1,3 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { Paper, Typography } from "@mui/material";
 import { QuestionQuiz } from "../../../interfaces";
 
