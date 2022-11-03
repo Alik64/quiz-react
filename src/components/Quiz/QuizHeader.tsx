@@ -13,7 +13,13 @@ const style = {
   background: "#fff",
   pt: "1rem",
 };
-export const QuizHeader = ({ title, score, errors }) => {
+
+type QuizHeaderPropsType = {
+  title: string;
+  score: number;
+  errors: number;
+};
+export const QuizHeader = ({ title, score, errors }: QuizHeaderPropsType) => {
   return (
     <Container maxWidth="md" sx={style}>
       <Toolbar>

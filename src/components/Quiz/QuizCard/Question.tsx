@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Paper, Typography } from "@mui/material";
 
-const Question = ({ data }) => {
+type QuestionPropsType = {
+  data: any;
+};
+
+const Question = ({ data }: QuestionPropsType) => {
   const codeContainer = {
     display: "flex",
     justifyContent: "flex-start",
@@ -18,7 +22,7 @@ const Question = ({ data }) => {
         <Paper elevation={1} sx={codeContainer}>
           <div className="quiz_code">
             <pre>
-              {data.code.map((line) => (
+              {data.code.map((line: any) => (
                 <p key={line.line}>{line.text}</p>
               ))}
             </pre>

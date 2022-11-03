@@ -4,7 +4,11 @@ import Question from "./Question";
 import { Answers } from "./Answers";
 import { Card, CardContent } from "@mui/material";
 
-export const QuizCard = ({ question }) => {
+type QuizPropsType = {
+  question: any;
+};
+
+export const QuizCard = ({ question }: QuizPropsType) => {
   return (
     <Card key={question.id}>
       <CardContent>

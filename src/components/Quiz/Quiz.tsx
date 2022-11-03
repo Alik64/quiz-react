@@ -9,7 +9,11 @@ import ModalResultUI from "../Modals/ModalResultUI";
 
 import { Stack, Button, Container } from "@mui/material";
 
-export default function Quiz({ newQuestions, title, loading }) {
+type QuizPropsType = {
+  newQuestions: any[];
+  title: string;
+};
+const Quiz = ({ newQuestions, title }: QuizPropsType) => {
   const { modalName, setModalName, err, score } = useContext(AppContext);
   return (
     <Container maxWidth="md">
@@ -41,10 +45,6 @@ export default function Quiz({ newQuestions, title, loading }) {
       </Stack>
     </Container>
   );
-}
-
-Quiz.propTypes = {
-  newQuestions: PropTypes.array,
-  title: PropTypes.string,
-  loading: PropTypes.bool,
 };
+
+export default Quiz;
