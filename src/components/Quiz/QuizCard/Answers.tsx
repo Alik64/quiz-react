@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
+
 import { AppContext } from "../../../context/appContext";
 import { Button, Stack } from "@mui/material";
+import { Answer } from "../../../interfaces";
 
 type AnswersPropsType = {
-  data: any;
+  data: Answer[];
 };
 
 export const Answers = ({ data }: AnswersPropsType) => {
@@ -12,9 +13,10 @@ export const Answers = ({ data }: AnswersPropsType) => {
 
   const handleCheckAnswer = (
     e: React.MouseEvent<HTMLButtonElement>,
-    bool: boolean
+    bool: boolean | undefined
   ) => {
     const target = e.target as HTMLButtonElement;
+
     if (bool !== undefined) {
       onCheckAnswer(bool);
       target.style.color = "var(--green)";
@@ -27,7 +29,7 @@ export const Answers = ({ data }: AnswersPropsType) => {
   };
   return (
     <Stack spacing={1} mt={1}>
-      {data.answers.map((answer: any) => (
+      {data.map((answer) => (
         <Button
           sx={{ textTransform: "none", background: "#EFEFEF" }}
           variant="contained"
