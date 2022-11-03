@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Toolbar, Stack, Typography, Container } from "@mui/material";
 
 import logo from "../../assets/images/reactlogo.png";
