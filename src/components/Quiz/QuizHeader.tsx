@@ -1,8 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
+
 import { Toolbar, Stack, Typography, Container } from "@mui/material";
 
 import logo from "../../assets/images/reactlogo.png";
+
 const style = {
   height: "110px",
   position: "fixed",
@@ -44,10 +45,4 @@ export const QuizHeader = ({ title, score, errors }: QuizHeaderPropsType) => {
       </Toolbar>
     </Container>
   );
-};
-
-QuizHeader.propTypes = {
-  score: PropTypes.number,
-  errors: PropTypes.number,
-  title: PropTypes.string,
 };
