@@ -3,13 +3,18 @@ import PropTypes from "prop-types";
 import Question from "./Question";
 import { Answers } from "./Answers";
 import { Card, CardContent } from "@mui/material";
+import { QuestionQuiz } from "../../../interfaces";
 
-export const QuizCard = ({ question }) => {
+type QuizPropsType = {
+  question: QuestionQuiz;
+};
+
+export const QuizCard = ({ question }: QuizPropsType) => {
   return (
     <Card key={question.id}>
       <CardContent>
         <Question data={question} />
-        <Answers data={question} />
+        <Answers data={question.answers} />
       </CardContent>
     </Card>
   );

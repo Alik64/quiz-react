@@ -1,8 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { Paper, Typography } from "@mui/material";
+import { QuestionQuiz } from "../../../interfaces";
 
-const Question = ({ data }) => {
+type QuestionPropsType = {
+  data: QuestionQuiz;
+};
+
+const Question = ({ data }: QuestionPropsType) => {
   const codeContainer = {
     display: "flex",
     justifyContent: "flex-start",
@@ -18,7 +21,7 @@ const Question = ({ data }) => {
         <Paper elevation={1} sx={codeContainer}>
           <div className="quiz_code">
             <pre>
-              {data.code.map((line) => (
+              {data.code.map((line: any) => (
                 <p key={line.line}>{line.text}</p>
               ))}
             </pre>
@@ -27,10 +30,6 @@ const Question = ({ data }) => {
       )}
     </>
   );
-};
-
-Question.propTypes = {
-  data: PropTypes.object,
 };
 
 export default Question;

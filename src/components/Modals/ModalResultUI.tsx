@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AppContext } from "../../context/appContext";
 import { useNavigate } from "react-router-dom";
 
-export const showYourSkill = (number, err) => {
+export const showYourSkill = (number: number, err: string | number) => {
   switch (true) {
     case err > 4:
       return "Too many errors to rate your skill, try again! 🖖";

@@ -1,5 +1,5 @@
-import React, { useContext, useMemo } from "react";
-import PropTypes from "prop-types";
+import { useContext, useMemo } from "react";
+
 import { AppContext } from "../../context/appContext";
 
 import { QuizHeader } from "./QuizHeader";
@@ -8,8 +8,13 @@ import ModalRulesUI from "../Modals/ModalRulesUI";
 import ModalResultUI from "../Modals/ModalResultUI";
 
 import { Stack, Button, Container } from "@mui/material";
+import { QuestionQuiz } from "../../interfaces";
 
-export default function Quiz({ newQuestions, title, loading }) {
+type QuizPropsType = {
+  newQuestions: QuestionQuiz[];
+  title: string;
+};
+const Quiz = ({ newQuestions, title }: QuizPropsType) => {
   const { modalName, setModalName, err, score } = useContext(AppContext);
   return (
     <Container maxWidth="md">
@@ -41,10 +46,6 @@ export default function Quiz({ newQuestions, title, loading }) {
       </Stack>
     </Container>
   );
-}
-
-Quiz.propTypes = {
-  newQuestions: PropTypes.array,
-  title: PropTypes.string,
-  loading: PropTypes.bool,
 };
+
+export default Quiz;
