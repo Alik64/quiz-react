@@ -3,6 +3,7 @@
   "homepage": "https://ultimate-react-quiz.netlify.app/",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://quiz-react-api.vercel.app",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
