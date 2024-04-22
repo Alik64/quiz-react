@@ -11,7 +11,7 @@
     "@mui/material": "^5.8.2",
     "@nastyox/rando.js": "^2.0.5",
     "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "^15.0.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^29.2.1",
     "@types/node": "^18.11.9",
