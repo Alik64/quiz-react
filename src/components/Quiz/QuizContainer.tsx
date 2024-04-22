@@ -12,7 +12,7 @@ export default function QuizContainer() {
     const fetchData = async () => {
       setLoading(true);
       const result = await axios.get(
-        "https://quiz-react-api.onrender.com/api/questions/react"
+        "https://quiz-react-jqocxvs1x-alik64s-projects.vercel.app/"
       );
       setItems(result.data);
       setLoading(false);
