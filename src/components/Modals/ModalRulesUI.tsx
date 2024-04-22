@@ -41,23 +41,22 @@ export default function ModalRulesUI() {
               Rules
             </Typography>
             <Typography className="modal-modal-description">
-              You should answer to <strong>15</strong> questions.
+              You should answer <strong>15</strong> questions.
             </Typography>
             <Typography className="modal-modal-description">
-              Every positive answer give you <strong>1</strong> point.
+            Each correct answer earns you <strong>1</strong> point.
             </Typography>
             <Typography className="modal-modal-description">
-              Only <strong>1</strong> good answer by question.
+            There is only  <strong>1</strong> correct answer per question.
             </Typography>
             <Typography className="modal-modal-description" align="center">
-              If you make a mistake you can retry until you find a good answer.
+            You may continue to attempt to answer correctly until you find the right answer.
             </Typography>
             <Typography className="modal-modal-description" align="center">
-              You have a right to make <strong>3</strong> errors.
+            You are allowed up to <strong>3</strong> incorrect answers without penalty.
             </Typography>
             <Typography className="modal-modal-description" align="center">
-              Each additional error will decrease your score by{" "}
-              <strong>1</strong> point.
+              Each error beyond the initial 3 will reduce your score by <strong>1</strong> point.
             </Typography>
 
             <Typography

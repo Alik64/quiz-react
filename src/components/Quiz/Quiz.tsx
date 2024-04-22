@@ -26,7 +26,12 @@ const Quiz = ({ newQuestions, title }: QuizPropsType) => {
       <QuizHeader title={title} score={score} errors={err} />
 
       <Stack spacing={2} mt={15}>
-        {/* <QuizCard question={newQuestions[0]} key={newQuestions[0]?.id} /> */}
+        {newQuestions && newQuestions.length > 0 && (
+          <QuizCard
+            question={newQuestions[currentQuestion]}
+            key={newQuestions[0]?.id}
+          />
+        )}
       </Stack>
       <Stack alignItems="center" p={5}>
         <Stack direction="row" alignItems="center" spacing={2} p={5}>
@@ -44,7 +49,7 @@ const Quiz = ({ newQuestions, title }: QuizPropsType) => {
           <Button
             variant="contained"
             size="large"
-            color={isLastQuestion ? "success" : "primary"} // This applies the theme's success color, typically green.
+            color={isLastQuestion ? "success" : "primary"}
             sx={{ textTransform: "none" }}
             onClick={
               isLastQuestion
