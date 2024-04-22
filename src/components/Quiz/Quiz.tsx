@@ -29,29 +29,32 @@ const Quiz = ({ newQuestions, title }: QuizPropsType) => {
         {/* <QuizCard question={newQuestions[0]} key={newQuestions[0]?.id} /> */}
       </Stack>
       <Stack alignItems="center" p={5}>
-      <Stack direction="row" alignItems="center" spacing={2} p={5}>
-  {currentQuestion > 0 && (
-    <Button
-      variant="contained"
-      size="large"
-      sx={{ textTransform: "none" }}
-      onClick={() => setCurrentQuestion(prev => prev - 1)}
-    >
-      Previous
-    </Button>
-  )}
+        <Stack direction="row" alignItems="center" spacing={2} p={5}>
+          {currentQuestion > 0 && (
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ textTransform: "none" }}
+              onClick={() => setCurrentQuestion((prev) => prev - 1)}
+            >
+              Previous
+            </Button>
+          )}
 
-  <Button
-    variant="contained"
-    size="large"
-    color={isLastQuestion ?"success" : "primary"}  // This applies the theme's success color, typically green.
-    sx={{ textTransform: "none" }}
-    onClick={isLastQuestion ? () => setModalName("Results") : () => setCurrentQuestion(prev => prev + 1)}
-  >
-    {isLastQuestion ? "Validate" : "Next"}
-  </Button>
-</Stack>
-
+          <Button
+            variant="contained"
+            size="large"
+            color={isLastQuestion ? "success" : "primary"} // This applies the theme's success color, typically green.
+            sx={{ textTransform: "none" }}
+            onClick={
+              isLastQuestion
+                ? () => setModalName("Results")
+                : () => setCurrentQuestion((prev) => prev + 1)
+            }
+          >
+            {isLastQuestion ? "Validate" : "Next"}
+          </Button>
+        </Stack>
       </Stack>
     </Container>
   );
