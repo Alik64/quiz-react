@@ -11,15 +11,15 @@ export default function QuizContainer() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      setError("");  
+      setError("");
       const apiUrl = process.env.REACT_APP_API_URL;
-
+  
       if (!apiUrl) {
         setError("API URL not defined");  
         setLoading(false);
         return;  
       }
-
+  
       try {
         const result = await axios.get(apiUrl);
         setItems(result.data);
@@ -29,9 +29,10 @@ export default function QuizContainer() {
       }
       setLoading(false);
     };
-
+  
     fetchData();
   }, []);
+  
 
   if (loading) {
     return <Preloader />;
