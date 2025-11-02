@@ -1,17 +1,4 @@
-import { Toolbar, Stack, Typography, Container } from "@mui/material";
-
 import logo from "../../assets/images/reactlogo.png";
-
-const style = {
-  height: "110px",
-  position: "fixed",
-  zIndex: "2",
-  top: "0",
-  left: "0",
-  right: "0",
-  background: "#fff",
-  pt: "1rem",
-};
 
 type QuizHeaderPropsType = {
   title: string;
@@ -20,27 +7,22 @@ type QuizHeaderPropsType = {
 };
 export const QuizHeader = ({ title, score, errors }: QuizHeaderPropsType) => {
   return (
-    <Container maxWidth="md" sx={style}>
-      <Toolbar>
-        <img src={logo} alt={"react-logo"} className="quiz_logo" />
-        <Typography
-          variant="h4"
-          component="h2"
-          sx={{ flexGrow: 1 }}
-          className="quiz_title"
-        >
+    <div className="h-[110px] fixed z-[2] top-0 left-0 right-0 bg-white pt-4 max-w-4xl mx-auto">
+      <div className="min-h-16 flex items-center px-6">
+        <img src={logo} alt="react-logo" className="quiz_logo" />
+        <h2 className="text-4xl flex-grow quiz_title">
           {title}
-        </Typography>
+        </h2>
 
-        <Stack spacing={1}>
-          <Typography variant="h6" color={errors >= 3 ? "red" : "inherit"}>
+        <div className="space-y-1">
+          <h6 className={`text-xl ${errors >= 3 ? 'text-red-600' : ''}`}>
             Score: {score}
-          </Typography>
-          <Typography variant="h6" color={errors >= 3 ? "red" : "inherit"}>
+          </h6>
+          <h6 className={`text-xl ${errors >= 3 ? 'text-red-600' : ''}`}>
             Errors: {errors}
-          </Typography>
-        </Stack>
-      </Toolbar>
-    </Container>
+          </h6>
+        </div>
+      </div>
+    </div>
   );
 };

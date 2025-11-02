@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 import { AppContext } from "../../../context/appContext";
-import { Button, Stack } from "@mui/material";
 import { Answer } from "../../../interfaces";
 
 type AnswersPropsType = {
@@ -28,19 +27,17 @@ export const Answers = ({ data }: AnswersPropsType) => {
     }
   };
   return (
-    <Stack spacing={1} mt={1}>
+    <div className="space-y-1 mt-1">
       {data.map((answer) => (
-        <Button
-          sx={{ textTransform: "none", background: "#EFEFEF" }}
-          variant="contained"
-          color="inherit"
+        <button
+          className="w-full px-4 py-2 bg-[#EFEFEF] text-left rounded hover:bg-gray-300 transition-colors disabled:opacity-70"
           data-testid="quiz_answerBtn"
           onClick={(e) => handleCheckAnswer(e, answer.isAnswer)}
           key={answer.id}
         >
           {answer.code ? <code>{answer.text}</code> : answer.text}
-        </Button>
+        </button>
       ))}
-    </Stack>
+    </div>
   );
 };

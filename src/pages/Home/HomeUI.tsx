@@ -1,55 +1,36 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/reactlogo.png";
 
-import { Container, Stack, Button, Typography } from "@mui/material";
-
-const containerStyle = {
-  height: "100vh",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-};
-
 export const HomeUI = () => {
   return (
-    <Container maxWidth="lg" sx={containerStyle}>
-      <Stack
-        sx={{ pt: 5 }}
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        spacing={5}
-      >
-        <Stack alignItems="center">
+    <div className="max-w-6xl mx-auto h-screen flex flex-col justify-center">
+      <div className="pt-5 flex flex-col justify-center items-center space-y-5">
+        <div className="flex items-center">
           <img src={logo} alt="react logo" className="home_logo" />
-        </Stack>
-        <Stack spacing={4} alignItems="center">
-          <Typography variant="h4" component="h1" align="center">
+        </div>
+        <div className="space-y-4 flex flex-col items-center">
+          <h1 className="text-4xl text-center">
             Welcome to the Ultimate React Quiz!
-          </Typography>
+          </h1>
 
-          <Typography>Let's discover how good you are 🚀</Typography>
+          <p>Let's discover how good you are 🚀</p>
 
           <Link to="/quiz">
-            <Button
-              variant="contained"
-              size="large"
-              sx={{ textTransform: "none" }}
-            >
+            <button className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
               Let's go!
-            </Button>
+            </button>
           </Link>
-          <Typography pt={10}>
+          <p className="pt-10">
             Created with 💙 by{" "}
             <a
-              style={{ color: "var(--darkBlue)" }}
+              className="text-darkblue"
               href="https://www.linkedin.com/in/albert-64/"
             >
               Albert
             </a>
-          </Typography>
-        </Stack>
-      </Stack>
-    </Container>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };

@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Question from "./Question";
 import { Answers } from "./Answers";
-import { Card, CardContent } from "@mui/material";
 import { QuestionQuiz } from "../../../interfaces";
 
 type QuizPropsType = {
@@ -11,15 +9,11 @@ type QuizPropsType = {
 
 export const QuizCard = ({ question }: QuizPropsType) => {
   return (
-    <Card key={question.id}>
-      <CardContent>
+    <div key={question.id} className="border rounded-lg shadow-md bg-white">
+      <div className="p-4">
         <Question data={question} />
         <Answers data={question.answers} />
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
-};
-
-QuizCard.propTypes = {
-  question: PropTypes.object,
 };

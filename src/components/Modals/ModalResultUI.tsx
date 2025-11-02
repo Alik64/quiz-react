@@ -1,9 +1,8 @@
-import { Box, Stack, Button, Modal, Typography, Link } from "@mui/material";
 import { useContext } from "react";
 import { AppContext } from "../../context/appContext";
 import { useNavigate } from "react-router-dom";
 
-export const showYourSkill = (number: number, err: string | number) => {
+export const showYourSkill = (number: number, err: string | number): string => {
   switch (true) {
     case err > 4:
       return "Too many errors to rate your skill, try again! 🖖";
@@ -27,23 +26,9 @@ export const showYourSkill = (number: number, err: string | number) => {
       return "Kill it man! 🚀";
     case number > 15:
       return `Warning:${number} is out of range, How could you get it 🤔?!?!?`;
+    default:
+      return "Keep learning! 📚";
   }
-};
-
-const style = {
-  position: "fixed",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 350,
-  background: "#EAEAEA",
-  border: "1px solid #fff",
-  borderRadius: 5,
-  boxShadow: 24,
-  p: 3,
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
 };
 
 export default function ModalResultUI() {
@@ -61,62 +46,54 @@ export default function ModalResultUI() {
 
   return (
     <div>
-      <Modal
-        open={true}
-        onClose={handleClose}
+      <div
+        className="fixed inset-0 bg-black bg-opacity-50 z-50"
+        onClick={handleClose}
+        aria-hidden="true"
+      />
+      <div
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] bg-[#EAEAEA] border border-white rounded-md shadow-2xl p-3 flex flex-col items-center z-50"
+        role="dialog"
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Stack spacing={3} direction="column" alignItems="center">
-            <Typography
-              id="modal-modal-title"
-              variant="h4"
-              component="h1"
-              gutterBottom
-            >
-              You did it!
-            </Typography>
+        <div className="space-y-3 flex flex-col items-center">
+          <h1 id="modal-modal-title" className="text-4xl mb-4">
+            You did it!
+          </h1>
 
-            <Typography className="modal-modal-description" variant="h5">
-              Good answers: {good}
-            </Typography>
-            <Typography className="modal-modal-description" variant="h5">
-              Errors: {err}
-            </Typography>
-            <Typography className="modal-modal-description" variant="h5">
-              Your score : {score}
-            </Typography>
-            <Typography
-              className="modal-modal-description"
-              variant="h5"
-              align="center"
-            >
-              Your rating :{" "}
-            </Typography>
-            <Typography variant="h5" sx={{ color: "darkblue" }} align="center">
-              {showYourSkill(score, err)}
-            </Typography>
-            <Link
-              underline="hover"
-              target="_blank"
-              rel="noreferrer"
-              href="https://reactjs.org/"
-            >
-              Here you can RTFM
-            </Link>
-          </Stack>
-          <Button
-            onClick={handleClose}
-            variant="contained"
-            size="large"
-            sx={{ mt: 3, textTransform: "none" }}
-            data-testid="toggle-btn"
+          <p className="modal-modal-description text-2xl">
+            Good answers: {good}
+          </p>
+          <p className="modal-modal-description text-2xl">
+            Errors: {err}
+          </p>
+          <p className="modal-modal-description text-2xl">
+            Your score : {score}
+          </p>
+          <p className="modal-modal-description text-2xl text-center">
+            Your rating :{" "}
+          </p>
+          <p className="text-2xl text-darkblue text-center">
+            {showYourSkill(score, err)}
+          </p>
+          <a
+            className="underline hover:no-underline"
+            target="_blank"
+            rel="noreferrer"
+            href="https://reactjs.org/"
           >
-            Close
-          </Button>
-        </Box>
-      </Modal>
+            Here you can RTFM
+          </a>
+        </div>
+        <button
+          onClick={handleClose}
+          className="mt-3 px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          data-testid="toggle-btn"
+        >
+          Close
+        </button>
+      </div>
     </div>
   );
 }

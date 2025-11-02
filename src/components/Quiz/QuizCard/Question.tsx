@@ -1,4 +1,3 @@
-import { Paper, Typography } from "@mui/material";
 import { QuestionQuiz } from "../../../interfaces";
 
 type QuestionPropsType = {
@@ -6,19 +5,13 @@ type QuestionPropsType = {
 };
 
 const Question = ({ data }: QuestionPropsType) => {
-  const codeContainer = {
-    display: "flex",
-    justifyContent: "flex-start",
-    overflowX: "scroll",
-  };
-
   return (
     <>
-      <Typography variant="h6" component="div" gutterBottom>
+      <div className="text-xl mb-4">
         {data.question}
-      </Typography>
+      </div>
       {data.code && (
-        <Paper elevation={1} sx={codeContainer}>
+        <div className="flex justify-start overflow-x-auto shadow-sm bg-gray-50 rounded p-2">
           <div className="quiz_code">
             <pre>
               {data.code.map((line: any) => (
@@ -26,7 +19,7 @@ const Question = ({ data }: QuestionPropsType) => {
               ))}
             </pre>
           </div>
-        </Paper>
+        </div>
       )}
     </>
   );
