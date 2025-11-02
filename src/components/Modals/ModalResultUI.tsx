@@ -43,7 +43,7 @@ const getRatingEmoji = (score: number, err: number): string => {
 const getRatingColor = (score: number, err: number): string => {
   if (err > 4) return "text-red-400";
   if (score >= 13) return "text-yellow-400";
-  if (score >= 10) return "text-cyan-400";
+  if (score >= 10) return "text-[#61DAFB]";
   if (score >= 8) return "text-green-400";
   if (score >= 5) return "text-blue-400";
   return "text-gray-400";
@@ -104,14 +104,14 @@ export default function ModalResultUI() {
           </div>
           <div className="bg-slate-900 border border-slate-700 rounded-xl p-4 flex flex-col items-center">
             <div className="text-3xl mb-2">🎯</div>
-            <div className="text-2xl font-bold text-cyan-400">{score}</div>
+            <div className="text-2xl font-bold text-[#61DAFB]">{score}</div>
             <div className="text-xs text-gray-400">Score</div>
           </div>
         </div>
 
         {/* RTFM Link */}
         <a
-          className="text-cyan-400 hover:text-cyan-300 transition-colors mb-6"
+          className="text-[#61DAFB] hover:text-[#7ee7ff] transition-colors mb-6"
           target="_blank"
           rel="noreferrer"
           href="https://reactjs.org/"

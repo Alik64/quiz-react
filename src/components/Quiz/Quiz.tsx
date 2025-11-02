@@ -33,13 +33,13 @@ const Quiz = ({ newQuestions, title }: QuizPropsType) => {
             <span className="text-sm font-medium text-gray-400">
               Question {currentQuestion + 1} of {newQuestions.length}
             </span>
-            <span className="text-sm font-medium text-cyan-400">
+            <span className="text-sm font-medium text-[#61DAFB]">
               {Math.round(progress)}%
             </span>
           </div>
           <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
             <div
-              className="h-full bg-cyan-500 transition-all duration-500 ease-out"
+              className="h-full bg-[#61DAFB] transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             ></div>
           </div>

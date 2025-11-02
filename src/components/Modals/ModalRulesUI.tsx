@@ -51,7 +51,7 @@ export default function ModalRulesUI() {
         </div>
 
         {/* Good luck message */}
-        <p className="text-xl font-semibold text-cyan-400 mb-6">
+        <p className="text-xl font-semibold text-[#61DAFB] mb-6">
           Good luck!
         </p>
 

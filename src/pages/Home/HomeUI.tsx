@@ -21,7 +21,7 @@ export const HomeUI = () => {
 
         <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
           Test your React knowledge with{" "}
-          <span className="text-cyan-400 font-semibold">15 challenging questions</span>
+          <span className="text-[#61DAFB] font-semibold">15 challenging questions</span>
           {" "}and prove your expertise!
         </p>
 
@@ -52,7 +52,7 @@ export const HomeUI = () => {
         <p className="mt-16 text-gray-500 text-sm">
           Created with 💙 by{" "}
           <a
-            className="text-cyan-400 hover:text-cyan-300 transition-colors"
+            className="text-[#61DAFB] hover:text-[#7ee7ff] transition-colors"
             href="https://www.linkedin.com/in/albert-64/"
             target="_blank"
             rel="noopener noreferrer"
