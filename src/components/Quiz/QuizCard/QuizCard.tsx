@@ -9,8 +9,11 @@ type QuizPropsType = {
 
 export const QuizCard = ({ question }: QuizPropsType) => {
   return (
-    <div key={question.id} className="border rounded-lg shadow-md bg-white">
-      <div className="p-4">
+    <div
+      key={question.id}
+      className="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden"
+    >
+      <div className="p-8">
         <Question data={question} />
         <Answers data={question.answers} />
       </div>

@@ -5,52 +5,63 @@ export default function ModalRulesUI() {
   const { setModalName } = useContext(AppContext);
   const handleClose = () => setModalName(null);
 
+  const rules = [
+    { icon: "📝", text: "Answer 15 questions about React" },
+    { icon: "✅", text: "Each correct answer = 1 point" },
+    { icon: "🎯", text: "Only 1 correct answer per question" },
+    { icon: "🔄", text: "Keep trying until you find the right answer" },
+    { icon: "💚", text: "First 3 errors are free" },
+    { icon: "⚠️", text: "Each error after 3 = -1 point" },
+  ];
+
   return (
     <div>
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-50"
+        className="fixed inset-0 bg-black/70 z-50 animate-fadeIn"
         onClick={handleClose}
         aria-hidden="true"
       />
       <div
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] bg-[#EAEAEA] border border-white rounded-md shadow-2xl p-3 flex flex-col items-center z-50"
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md mx-4 bg-slate-800 border border-slate-700 rounded-2xl p-8 flex flex-col items-center z-50 animate-slideUp"
         role="dialog"
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div className="space-y-1 flex flex-col items-center">
-          <h1 id="modal-modal-title" className="text-4xl mb-4">
-            Rules
-          </h1>
-          <p className="modal-modal-description">
-            You should answer <strong>15</strong> questions.
-          </p>
-          <p className="modal-modal-description">
-            Each correct answer earns you <strong>1</strong> point.
-          </p>
-          <p className="modal-modal-description">
-            There is only <strong>1</strong> correct answer per question.
-          </p>
-          <p className="modal-modal-description text-center">
-            You may continue to attempt to answer correctly until you find the right answer.
-          </p>
-          <p className="modal-modal-description text-center">
-            You are allowed up to <strong>3</strong> incorrect answers without penalty.
-          </p>
-          <p className="modal-modal-description text-center">
-            Each error beyond the initial 3 will reduce your score by <strong>1</strong> point.
-          </p>
-
-          <h2 id="modal-modal-description" className="text-2xl">
-            Good luck!
-          </h2>
+        {/* Icon */}
+        <div className="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
+          <span className="text-3xl">📋</span>
         </div>
+
+        {/* Title */}
+        <h1 id="modal-modal-title" className="text-4xl font-bold mb-6 text-white">
+          Quiz Rules
+        </h1>
+
+        {/* Rules List */}
+        <div className="space-y-4 w-full mb-8">
+          {rules.map((rule, index) => (
+            <div
+              key={index}
+              className="flex items-start gap-3 p-3 bg-slate-900 rounded-lg border border-slate-700"
+            >
+              <span className="text-2xl flex-shrink-0">{rule.icon}</span>
+              <p className="text-gray-300 text-sm leading-relaxed">{rule.text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Good luck message */}
+        <p className="text-xl font-semibold text-cyan-400 mb-6">
+          Good luck!
+        </p>
+
+        {/* CTA Button */}
         <button
           onClick={handleClose}
-          className="mt-3 px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          className="w-full px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white text-lg font-semibold rounded-xl transition-colors"
           data-testid="toggle-btn"
         >
-          I'm ready !
+          I'm Ready!
         </button>
       </div>
     </div>

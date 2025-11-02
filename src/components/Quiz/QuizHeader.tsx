@@ -7,20 +7,37 @@ type QuizHeaderPropsType = {
 };
 export const QuizHeader = ({ title, score, errors }: QuizHeaderPropsType) => {
   return (
-    <div className="h-[110px] fixed z-[2] top-0 left-0 right-0 bg-white pt-4 max-w-4xl mx-auto">
-      <div className="min-h-16 flex items-center px-6">
-        <img src={logo} alt="react-logo" className="quiz_logo" />
-        <h2 className="text-4xl flex-grow quiz_title">
-          {title}
-        </h2>
+    <div className="fixed z-50 top-0 left-0 right-0 bg-slate-800 border-b border-slate-700">
+      <div className="max-w-4xl mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo et titre */}
+          <div className="flex items-center gap-4">
+            <img
+              src={logo}
+              alt="react-logo"
+              className="w-12 h-12"
+              style={{ animation: 'spin 20s linear infinite' }}
+            />
+            <h2 className="text-2xl font-bold text-white">
+              {title}
+            </h2>
+          </div>
 
-        <div className="space-y-1">
-          <h6 className={`text-xl ${errors >= 3 ? 'text-red-600' : ''}`}>
-            Score: {score}
-          </h6>
-          <h6 className={`text-xl ${errors >= 3 ? 'text-red-600' : ''}`}>
-            Errors: {errors}
-          </h6>
+          {/* Stats */}
+          <div className="flex gap-4">
+            <div className="bg-slate-900 rounded-lg px-4 py-2 border border-slate-700">
+              <div className="text-xs text-gray-400 mb-1">Score</div>
+              <div className="text-lg font-bold text-cyan-400">
+                {score}
+              </div>
+            </div>
+            <div className="bg-slate-900 rounded-lg px-4 py-2 border border-slate-700">
+              <div className="text-xs text-gray-400 mb-1">Errors</div>
+              <div className={`text-lg font-bold ${errors >= 3 ? 'text-red-400' : 'text-cyan-400'}`}>
+                {errors}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
