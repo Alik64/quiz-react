@@ -5,9 +5,11 @@ import { QuestionQuiz } from "../../../interfaces";
 
 type QuizPropsType = {
   question: QuestionQuiz;
+  isAnswered: boolean;
+  onAnswerSubmit: () => void;
 };
 
-export const QuizCard = ({ question }: QuizPropsType) => {
+export const QuizCard = ({ question, isAnswered, onAnswerSubmit }: QuizPropsType) => {
   return (
     <div
       key={question.id}
@@ -15,7 +17,11 @@ export const QuizCard = ({ question }: QuizPropsType) => {
     >
       <div className="p-8">
         <Question data={question} />
-        <Answers data={question.answers} />
+        <Answers
+          data={question.answers}
+          isAnswered={isAnswered}
+          onAnswerSubmit={onAnswerSubmit}
+        />
       </div>
     </div>
   );

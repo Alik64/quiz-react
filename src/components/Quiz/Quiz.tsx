@@ -16,8 +16,23 @@ type QuizPropsType = {
 const Quiz = ({ newQuestions, title }: QuizPropsType) => {
   const { modalName, setModalName, err, score } = useContext(AppContext);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set());
   const isLastQuestion = currentQuestion === newQuestions.length - 1;
   const progress = ((currentQuestion + 1) / newQuestions.length) * 100;
+
+  const handleAnswerSubmit = () => {
+    // Marquer la question comme répondue
+    setAnsweredQuestions(prev => new Set(prev).add(currentQuestion));
+
+    // Auto-avancer après 800ms
+    setTimeout(() => {
+      if (isLastQuestion) {
+        setModalName("Results");
+      } else {
+        setCurrentQuestion((prev) => prev + 1);
+      }
+    }, 800);
+  };
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -50,37 +65,12 @@ const Quiz = ({ newQuestions, title }: QuizPropsType) => {
           <div className="animate-fadeIn">
             <QuizCard
               question={newQuestions[currentQuestion]}
+              isAnswered={answeredQuestions.has(currentQuestion)}
+              onAnswerSubmit={handleAnswerSubmit}
               key={newQuestions[currentQuestion]?.id}
             />
           </div>
         )}
-
-        {/* Navigation */}
-        <div className="flex items-center justify-center gap-3 mt-6">
-          {currentQuestion > 0 && (
-            <button
-              className="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-all border border-gray-700 hover:border-gray-600"
-              onClick={() => setCurrentQuestion((prev) => prev - 1)}
-            >
-              ← Previous
-            </button>
-          )}
-
-          <button
-            className={`px-6 py-2.5 text-white rounded-lg transition-all font-semibold ${
-              isLastQuestion
-                ? 'bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800'
-                : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700'
-            }`}
-            onClick={
-              isLastQuestion
-                ? () => setModalName("Results")
-                : () => setCurrentQuestion((prev) => prev + 1)
-            }
-          >
-            {isLastQuestion ? "Finish Quiz ✓" : "Next →"}
-          </button>
-        </div>
       </div>
     </div>
   );

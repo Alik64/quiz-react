@@ -11,18 +11,15 @@ export function AppContextProvider({ children }) {
 
   const onCheckAnswer = (condit) => {
     if (condit !== undefined) {
+      // Bonne réponse : +1 point
       setScore((prevScore) => prevScore + 1);
       setGood((prevGood) => prevGood + 1);
     } else {
+      // Mauvaise réponse : -1 point
       setErr((prevErr) => prevErr + 1);
+      setScore((prevScore) => Math.max(0, prevScore - 1)); // Minimum 0
     }
   };
-
-  useEffect(() => {
-    if (err > 3) {
-      setScore((prevScore) => prevScore - 1);
-    }
-  }, [err]);
 
   return (
     <AppContext.Provider
