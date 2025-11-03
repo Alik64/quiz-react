@@ -41,11 +41,11 @@ const getRatingEmoji = (score: number, err: number): string => {
 };
 
 const getRatingColor = (score: number, err: number): string => {
-  if (err > 4) return "text-red-400";
+  if (err > 4) return "text-rose-400";
   if (score >= 13) return "text-yellow-400";
-  if (score >= 10) return "text-[#61DAFB]";
-  if (score >= 8) return "text-green-400";
-  if (score >= 5) return "text-blue-400";
+  if (score >= 10) return "text-indigo-400";
+  if (score >= 8) return "text-emerald-400";
+  if (score >= 5) return "text-purple-400";
   return "text-gray-400";
 };
 
@@ -65,68 +65,76 @@ export default function ModalResultUI() {
   return (
     <div>
       <div
-        className="fixed inset-0 bg-black/70 z-50 animate-fadeIn"
+        className="fixed inset-0 bg-gradient-to-br from-black/80 via-slate-900/80 to-black/80 backdrop-blur-sm z-50 animate-fadeIn"
         onClick={handleClose}
         aria-hidden="true"
       />
       <div
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg mx-4 bg-slate-800 border border-slate-700 rounded-2xl p-8 flex flex-col items-center z-50 animate-slideUp"
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg mx-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-indigo-500/20 rounded-3xl shadow-2xl shadow-indigo-500/10 overflow-hidden z-50 animate-slideUp"
         role="dialog"
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        {/* Icon */}
-        <div className="w-24 h-24 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
-          <span className="text-5xl">{getRatingEmoji(score, err)}</span>
+        {/* Decorative gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-purple-500/5 pointer-events-none" />
+
+        <div className="relative p-8 flex flex-col items-center">
+          {/* Icon with glow effect */}
+          <div className="relative w-24 h-24 mb-6">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full blur-xl opacity-50 animate-pulse" />
+            <div className="relative w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+              <span className="text-5xl">{getRatingEmoji(score, err)}</span>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h1 id="modal-modal-title" className="text-4xl md:text-5xl font-extrabold mb-3 text-center bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+            Quiz Completed!
+          </h1>
+
+          {/* Rating */}
+          <p className={`text-2xl md:text-3xl font-bold mb-8 ${getRatingColor(score, err)}`}>
+            {showYourSkill(score, err)}
+          </p>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-3 gap-3 w-full mb-8">
+            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-3 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
+              <div className="text-2xl mb-1">✅</div>
+              <div className="text-2xl font-bold text-emerald-400">{good}</div>
+              <div className="text-xs text-gray-300">Correct</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-3 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
+              <div className="text-2xl mb-1">❌</div>
+              <div className="text-2xl font-bold text-rose-400">{err}</div>
+              <div className="text-xs text-gray-300">Errors</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-3 flex flex-col items-center hover:bg-gray-700/50 transition-colors">
+              <div className="text-2xl mb-1">🎯</div>
+              <div className="text-2xl font-bold text-indigo-400">{score}</div>
+              <div className="text-xs text-gray-300">Score</div>
+            </div>
+          </div>
+
+          {/* RTFM Link */}
+          <a
+            className="text-indigo-400 hover:text-indigo-300 transition-colors mb-6 text-base"
+            target="_blank"
+            rel="noreferrer"
+            href="https://reactjs.org/"
+          >
+            📖 React Documentation
+          </a>
+
+          {/* CTA Button */}
+          <button
+            onClick={handleClose}
+            className="w-full px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-lg font-bold rounded-2xl transition-all shadow-lg shadow-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/60 hover:scale-[1.02] active:scale-[0.98]"
+            data-testid="toggle-btn"
+          >
+            Try Again 🔄
+          </button>
         </div>
-
-        {/* Title */}
-        <h1 id="modal-modal-title" className="text-4xl font-bold mb-2 text-white">
-          Quiz Completed!
-        </h1>
-
-        {/* Rating */}
-        <p className={`text-3xl font-bold mb-8 ${getRatingColor(score, err)}`}>
-          {showYourSkill(score, err)}
-        </p>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-3 gap-4 w-full mb-8">
-          <div className="bg-slate-900 border border-slate-700 rounded-xl p-4 flex flex-col items-center">
-            <div className="text-3xl mb-2">✅</div>
-            <div className="text-2xl font-bold text-green-400">{good}</div>
-            <div className="text-xs text-gray-400">Correct</div>
-          </div>
-          <div className="bg-slate-900 border border-slate-700 rounded-xl p-4 flex flex-col items-center">
-            <div className="text-3xl mb-2">❌</div>
-            <div className="text-2xl font-bold text-red-400">{err}</div>
-            <div className="text-xs text-gray-400">Errors</div>
-          </div>
-          <div className="bg-slate-900 border border-slate-700 rounded-xl p-4 flex flex-col items-center">
-            <div className="text-3xl mb-2">🎯</div>
-            <div className="text-2xl font-bold text-[#61DAFB]">{score}</div>
-            <div className="text-xs text-gray-400">Score</div>
-          </div>
-        </div>
-
-        {/* RTFM Link */}
-        <a
-          className="text-[#61DAFB] hover:text-[#7ee7ff] transition-colors mb-6"
-          target="_blank"
-          rel="noreferrer"
-          href="https://reactjs.org/"
-        >
-          📖 React Documentation
-        </a>
-
-        {/* CTA Button */}
-        <button
-          onClick={handleClose}
-          className="w-full px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white text-lg font-semibold rounded-xl transition-colors"
-          data-testid="toggle-btn"
-        >
-          Try Again
-        </button>
       </div>
     </div>
   );

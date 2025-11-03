@@ -29,15 +29,15 @@ export const Answers = ({ data }: AnswersPropsType) => {
   };
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-2.5">
       {data.map((answer) => (
         <button
-          className={`group w-full px-6 py-4 text-left rounded-xl transition-all duration-300 border-2 ${
+          className={`group w-full px-4 py-3 text-left rounded-lg transition-all duration-300 border ${
             selectedAnswer === answer.id
               ? answer.isAnswer !== undefined
-                ? 'bg-green-500/20 border-green-500 text-green-100'
-                : 'bg-red-500/20 border-red-500 text-red-100'
-              : 'bg-white/5 border-white/10 text-gray-200 hover:bg-white/10 hover:border-cyan-500/50 hover:scale-[1.02]'
+                ? 'bg-emerald-500/20 border-emerald-500 text-emerald-50'
+                : 'bg-rose-500/20 border-rose-500 text-rose-50'
+              : 'bg-gray-800/50 border-gray-700 text-gray-200 hover:bg-gray-700/50 hover:border-indigo-500/50 hover:scale-[1.01]'
           } disabled:cursor-not-allowed active:scale-[0.98]`}
           data-testid="quiz_answerBtn"
           onClick={(e) => handleCheckAnswer(e, answer.isAnswer, answer.id)}
@@ -48,14 +48,14 @@ export const Answers = ({ data }: AnswersPropsType) => {
             <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
               selectedAnswer === answer.id
                 ? answer.isAnswer !== undefined
-                  ? 'bg-green-400 shadow-lg shadow-green-400/50'
-                  : 'bg-red-400 shadow-lg shadow-red-400/50'
-                : 'bg-cyan-400/30 group-hover:bg-cyan-400'
+                  ? 'bg-emerald-400 shadow-lg shadow-emerald-400/50'
+                  : 'bg-rose-400 shadow-lg shadow-rose-400/50'
+                : 'bg-indigo-400/40 group-hover:bg-indigo-400'
             }`}></div>
             {answer.code ? (
-              <code className="text-sm md:text-base font-mono">{answer.text}</code>
+              <code className="text-base font-mono text-gray-100">{answer.text}</code>
             ) : (
-              <span className="text-sm md:text-base">{answer.text}</span>
+              <span className="text-base text-gray-100">{answer.text}</span>
             )}
           </div>
         </button>
