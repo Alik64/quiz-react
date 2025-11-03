@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/reactlogo.png";
 
 type QuizHeaderPropsType = {
@@ -11,7 +12,7 @@ export const QuizHeader = ({ title, score, errors }: QuizHeaderPropsType) => {
       <div className="max-w-4xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo et titre */}
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img
               src={logo}
               alt="react-logo"
@@ -19,9 +20,9 @@ export const QuizHeader = ({ title, score, errors }: QuizHeaderPropsType) => {
               style={{ animation: 'spin 20s linear infinite' }}
             />
             <h2 className="text-xl font-bold text-gray-100">
-              {title}
+              Ultimate React Quiz
             </h2>
-          </div>
+          </Link>
 
           {/* Stats */}
           <div className="flex gap-3">
